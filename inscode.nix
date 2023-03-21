@@ -1,5 +1,6 @@
 { pkgs }: {
     deps = [
-        pkgs.cowsay
+        pkgs.yarn
+        pkgs.nodejs-16_x
     ];
 }
