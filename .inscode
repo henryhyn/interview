@@ -1,8 +1,8 @@
-run = "npm i && npm run dev"
+run = "npm i && npm run docs:dev"
 
 [deployment]
-build = "npm i && npm run build"
-run = "npm run preview"
+build = "npm i --registry=https://registry.npmmirror.com"
+run = "npm run docs:build && npm run docs:preview"
 
 [env]
 PATH = "/root/${PROJECT_DIR}/.config/npm/node_global/bin:/root/${PROJECT_DIR}/node_modules/.bin:${PATH}"

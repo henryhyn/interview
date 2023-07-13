@@ -1,17 +1,12 @@
 {
-  "name": "vuejs-with-vite",
-  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173"
-  },
-  "dependencies": {
-    "guess": "^1.0.2",
-    "vue": "^3.2.37"
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^3.0.1",
-    "vite": "^3.0.1"
+    "vitepress": "latest"
   }
 }
