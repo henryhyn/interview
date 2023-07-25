@@ -1,35 +1,39 @@
+body {
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, BlinkMacSystemFont, "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial;
+}
+
 main.main > .vp-doc > div > h2 {
-    counter-increment: section;
-    counter-reset: subsection;
+  counter-increment: section;
+  counter-reset: subsection;
 }
 
 main.main > .vp-doc > div > h2:before {
-    content: "§" counter(section) " ";
+  content: "§" counter(section) " ";
 }
 
 main.main > .vp-doc > div > h3 {
-    counter-increment: subsection;
-    counter-reset: subsubsection;
+  counter-increment: subsection;
+  counter-reset: subsubsection;
 }
 
 main.main > .vp-doc > div > h3:before {
-    content: counter(section) "." counter(subsection) " ";
+  content: counter(section) "." counter(subsection) " ";
 }
 
 nav[aria-labelledby="doc-outline-aria-label"] > ul > li {
-    counter-increment: section;
-    counter-reset: subsection;
+  counter-increment: section;
+  counter-reset: subsection;
 }
 
 nav[aria-labelledby="doc-outline-aria-label"] > ul > li > a:before {
-    content: "§" counter(section) " ";
+  content: "§" counter(section) " ";
 }
 
 nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li {
-    counter-increment: subsection;
-    counter-reset: subsubsection;
+  counter-increment: subsection;
+  counter-reset: subsubsection;
 }
 
 nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li > a:before {
-    content: counter(section) "." counter(subsection) " ";
+  content: counter(section) "." counter(subsection) " ";
 }

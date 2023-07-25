@@ -23,10 +23,6 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
     ],
-    footer: {
-      message: '该网站在 <a href="https://inscode.csdn.net/" target="_blank">InsCode</a> 开发并部署',
-      // copyright: 'Copyright © </a>'
-    },
     search: {
       provider: 'local'
     },
@@ -45,18 +41,19 @@ export default defineConfig({
 
 function nav() {
   return [
-    { text: '算法', link: '/ai/', activeMatch: '/ai/' },
-    { text: '后端', link: '/backend/', activeMatch: '/backend/' },
+    { text: '算法', link: '/ai/ml/basic', activeMatch: '/ai/' },
+    { text: '后端', link: '/backend/java/basic', activeMatch: '/backend/' },
     { text: '前端', link: '/frontend/', activeMatch: '/frontend/' },
-    { text: '关于', link: '/common/', activeMatch: '/common/' }
+    { text: '关于', link: '/common/example', activeMatch: '/common/' }
   ]
 }
 
 function sidebarAi() {
   return [{
-    text: '大语言模型',
+    text: '机器学习',
     items: [
-      { text: 'OpenAI', link: '/ai/llm/openai' }
+      { text: '基础知识', link: '/ai/ml/basic' },
+      { text: '决策树', link: '/ai/ml/decision' }
     ]
   }, {
     text: '深度学习',
@@ -64,10 +61,9 @@ function sidebarAi() {
       { text: '注意力机制', link: '/ai/dl/attention' }
     ]
   }, {
-    text: '机器学习',
+    text: '大语言模型',
     items: [
-      { text: '基础知识', link: '/ai/ml/basic' },
-      { text: '决策树', link: '/ai/ml/decision' }
+      { text: 'OpenAI', link: '/ai/llm/openai' }
     ]
   }]
 }
