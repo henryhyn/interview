@@ -1,5 +1,5 @@
+.idea
 node_modules
-dist
-.temp
-cache
+docs/.vitepress/cache
+docs/.vitepress/dist
 package-lock.json

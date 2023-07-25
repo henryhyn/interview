@@ -1,0 +1,35 @@
+main.main > .vp-doc > div > h2 {
+    counter-increment: section;
+    counter-reset: subsection;
+}
+
+main.main > .vp-doc > div > h2:before {
+    content: "§" counter(section) " ";
+}
+
+main.main > .vp-doc > div > h3 {
+    counter-increment: subsection;
+    counter-reset: subsubsection;
+}
+
+main.main > .vp-doc > div > h3:before {
+    content: counter(section) "." counter(subsection) " ";
+}
+
+nav[aria-labelledby="doc-outline-aria-label"] > ul > li {
+    counter-increment: section;
+    counter-reset: subsection;
+}
+
+nav[aria-labelledby="doc-outline-aria-label"] > ul > li > a:before {
+    content: "§" counter(section) " ";
+}
+
+nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li {
+    counter-increment: subsection;
+    counter-reset: subsubsection;
+}
+
+nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li > a:before {
+    content: counter(section) "." counter(subsection) " ";
+}

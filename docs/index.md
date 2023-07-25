@@ -2,14 +2,23 @@
 layout: home
 
 hero:
-  name: VitePress
-  text: Vite & Vue powered static site generator.
-  tagline: Simple, powerful, and performant. Meet the modern SSG framework you've always wanted.
+  name: 面试题库
+  text: 厚积薄发
+  tagline: 收集算法、后端、前端面试题库
   actions:
     - theme: brand
-      text: Get Started
-      link: /example
+      text: 开始阅读
+      link: /backend/
     - theme: alt
-      text: View on GitHub
-      link: https://github.com/vuejs/vitepress
+      text: 项目介绍
+      link: /common/
+
+features:
+  - title: 算法题库
+    details: 机器学习, 深度学习
+  - title: 后端题库
+    details: Java, Spring, 数据库
+  - title: 前端题库
+    details: Vue, JavaScript
 ---
+
