@@ -17,6 +17,7 @@ export default defineConfig({
       '/ai/': sidebarAi(),
       '/backend/': sidebarBackend(),
       '/frontend/': sidebarFrontend(),
+      '/project/': sidebarProject(),
       '/common/': sidebarCommon()
     },
 
@@ -44,6 +45,7 @@ function nav() {
     { text: '算法', link: '/ai/ml/basic', activeMatch: '/ai/' },
     { text: '后端', link: '/backend/java/basic', activeMatch: '/backend/' },
     { text: '前端', link: '/frontend/', activeMatch: '/frontend/' },
+    { text: '项目', link: '/project/own/askdata', activeMatch: '/project/' },
     { text: '关于', link: '/common/example', activeMatch: '/common/' }
   ]
 }
@@ -95,6 +97,15 @@ function sidebarBackend() {
 
 function sidebarFrontend() {
   return []
+}
+
+function sidebarProject() {
+  return [{
+    text: '我的项目',
+    items: [
+      { text: '问数', link: '/project/own/askdata' },
+    ]
+  }]
 }
 
 function sidebarCommon() {

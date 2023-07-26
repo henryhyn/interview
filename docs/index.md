@@ -20,4 +20,6 @@ features:
     details: Java, Spring, 数据库
   - title: 前端题库
     details: Vue, JavaScript
+  - title: 项目实践
+    details: 优秀开源项目
 ---
