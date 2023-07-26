@@ -9,5 +9,4 @@ Java 集合类框架的基本接口主要有以下几种：
 3. Set 接口：这是一个不包含重复元素的集合接口。这个接口有两个主要的实现类：HashSet 和 TreeSet。
 4. Queue 接口：这是一个特殊的集合接口，它在处理元素时提供了额外的插入、提取和检查操作。这个接口的主要实现类有：LinkedList、PriorityQueue 等。
 5. Map 接口：这不是一个真正的集合接口，但它在 Java 集合框架中。它存储键值对，每个键映射到一个值。Map 接口的主要实现类有：HashMap、TreeMap、LinkedHashMap 等。
-6. Iterator 接口：这是一个用于遍历集合的接口，它有两个主要的方法：hasNext()和 next()。
-
+6. Iterator 接口：这是一个用于遍历集合的接口，它有两个主要的方法：hasNext() 和 next()。
