@@ -46,7 +46,7 @@ function nav() {
     { text: '后端', link: '/backend/java/basic', activeMatch: '/backend/' },
     { text: '前端', link: '/frontend/', activeMatch: '/frontend/' },
     { text: '项目', link: '/project/own/askdata', activeMatch: '/project/' },
-    { text: '关于', link: '/common/example', activeMatch: '/common/' }
+    { text: '关于', link: '/common/contact', activeMatch: '/common/' }
   ]
 }
 
@@ -83,6 +83,7 @@ function sidebarBackend() {
   }, {
     text: 'Spring',
     items: [
+      { text: 'Spring', link: '/backend/spring/spring' },
       { text: 'Spring Boot', link: '/backend/spring/spring-boot' },
       { text: 'Spring Cloud', link: '/backend/spring/spring-cloud' }
     ]
@@ -110,6 +111,7 @@ function sidebarProject() {
 
 function sidebarCommon() {
   return [
+    { text: '联系我', link: '/common/contact' },
     { text: 'Example', link: '/common/example' },
     { text: 'API Examples', link: '/common/api-examples' },
     { text: 'Markdown Examples', link: '/common/markdown-examples' }
