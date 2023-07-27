@@ -80,7 +80,7 @@ Integer integer = new Integer(10);
 int i = integer;  // 自动拆箱
 ```
 
-## 变量
+## 常量与变量
 
 ### 能否阐述一下在 Java 中成员变量和局部变量的区别？
 

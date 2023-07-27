@@ -77,7 +77,8 @@ function sidebarBackend() {
       { text: '基础', link: '/backend/java/basic' },
       { text: '集合', link: '/backend/java/collection' },
       { text: 'IO', link: '/backend/java/io' },
-      { text: '并发', link: '/backend/java/concurrent' },
+      { text: '并发与多线程', link: '/backend/java/concurrent' },
+      { text: '设计模式', link: '/backend/java/design' },
       { text: 'JVM', link: '/backend/java/jvm' }
     ]
   }, {
@@ -90,6 +91,7 @@ function sidebarBackend() {
   }, {
     text: '数据库',
     items: [
+      { text: '基础', link: '/backend/db/basic' },
       { text: 'MySQL', link: '/backend/db/mysql' },
       { text: 'Redis', link: '/backend/db/redis' }
     ]
