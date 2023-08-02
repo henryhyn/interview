@@ -41,6 +41,24 @@ Spring Boot 提供了许多不同的起步依赖，包括：
 
 使用起步依赖可以极大地简化构建配置，让你可以专注于应用程序的开发，而不是花费大量时间在管理依赖关系上。
 
+## Spring Boot 实现热部署有哪几种方式？
+
+Spring Boot 提供了几种实现热部署 (Hot Deployment) 的方式，主要包括以下几种：
+
+1. Spring Boot DevTools：Spring Boot DevTools 是 Spring Boot 提供的一个为开发者服务的模块，其中包含了自动重启应用的功能。只要在项目中引入 DevTools 的依赖，就可以实现热部署。当项目中的文件发生改变时，DevTools 会自动重启应用，使改动立即生效。
+2. JRebel：JRebel 是一个 Java 虚拟机插件，它可以在不重启应用的情况下，实时地将代码的改动加载到应用中。JRebel 支持大多数主流的 Java 框架和应用服务器，包括 Spring Boot。
+3. HotSwapAgent：HotSwapAgent 是一个开源的 Java 类重新加载工具。它通过修改 JVM，使得在运行时修改类定义成为可能。HotSwapAgent 不仅支持基本的类重新加载，还支持 Spring、Hibernate 等框架的热部署。
+4. LiveReload：LiveReload 是一个浏览器插件，它可以监听文件的改动，并在文件改动后自动刷新浏览器。如果你的项目是一个 Web 项目，那么 LiveReload 可以帮助你实现前端代码的热部署。
+
+## Spring Boot 中的监视器是什么？它有什么用途?
+
+Spring Boot Actuator 是 Spring Boot 中的监视器，它提供了一种监控和管理 Spring Boot 应用程序的方式，无论是生产环境还是开发环境。Actuator 主要提供了两类功能：HTTP 端点和指标。
+
+1. HTTP 端点：Actuator 通过 HTTP 或 JMX 暴露各种端点 (Endpoint)，你可以通过这些端点获取应用程序的各种信息，比如应用程序的运行状况、环境变量、自动配置报告、线程情况、堆栈信息、HTTP 追踪等。
+2. 指标 (Metrics)：Actuator 还提供了一套完整的度量集合，可以用来监控应用程序的运行情况，包括内存、垃圾回收、数据库连接池、HTTP 请求等。
+
+Spring Boot Actuator 的主要目标是帮助你监控和管理你的应用程序，比如健康检查、审计、统计和 HTTP 追踪等。所有这些特性可以通过 JMX 或 HTTP endpoints 来访问。
+
 ## 自动装配
 
 ### 什么是 SpringBoot 自动装配？

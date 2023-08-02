@@ -41,6 +41,21 @@ Spring Framework 是由多个模块组成的，这些模块提供了一系列的
 
 这些模块可以根据需要进行选择和使用，使得 Spring Framework 具有很高的灵活性和可扩展性。
 
+### 说说 Spring Framework 的发展过程
+
+Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编程和配置模型，用于现代的基于 Java 的企业级应用程序。以下是 Spring Framework 的主要版本更新和发展过程：
+
+1. Spring Framework 1.0（2004 年）：这是 Spring Framework 的首个版本，主要提供了依赖注入 (DI) 和面向切面编程 (AOP) 的功能，以及对 JDBC 的抽象支持。
+2. Spring Framework 2.0（2006 年）：这个版本引入了 XML 配置支持，以及对 JPA(Java Persistence API) 的支持。此外，还增加了对 AspectJ 的集成。
+3. Spring Framework 2.5（2007 年）：这个版本引入了注解驱动的编程模型，包括对 @Autowired 和 @Component 注解的支持。
+4. Spring Framework 3.0（2009 年）：这个版本引入了 Java 5+ 的支持，包括对注解的更深入支持，以及对 RESTful web services 的支持。
+5. Spring Framework 3.1（2011 年）：这个版本引入了 Java-based @Configuration 类，以及对 Servlet 3.0 和 Java EE 6 的支持。
+6. Spring Framework 4.0（2013 年）：这个版本引入了对 Java 8 的支持，包括对 lambda 表达式的支持，以及对 WebSocket 和 STOMP messaging 的支持。
+7. Spring Framework 5.0（2017 年）：这个版本引入了对 Reactive Programming 的支持，以及对 Java 9 和 Java EE 8 的支持。
+8. Spring Framework 5.1（2018 年）：这个版本进一步优化了对 Java 11 的支持，并引入了对 RSocket 的支持。
+9. Spring Framework 5.2（2019 年）：这个版本引入了对 R2DBC 的支持，以及对 Java 12 和 Java 13 的支持。
+10. Spring Framework 5.3（2021 年）：这个版本是 Spring Framework 5.x 系列的最后一个特性版本，主要进行了一些优化和改进。
+
 ### 什么是 Spring MVC?
 
 Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应用程序的模型-视图-控制器 (MVC) 框架。Spring MVC 提供了一种分离式的方法来构建 Web 应用，通过将应用程序逻辑分解为模型、视图和控制器三个部分，使得开发、测试和维护工作变得更加简单和清晰。
@@ -163,6 +178,16 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 3. 支持范围：@Autowired 只能用于 Spring 的 bean，而@Resource 可以用于所有的 Java 对象。
 4. 使用场景：@Autowired 通常用于 Spring 框架中，而@Resource 更多的是用于 Java EE 应用中。
 
+### @Qualifier 注解的作用是什么？
+
+`@Qualifier` 是 Spring 框架中的一个注解，主要用于解决自动装配时的歧义性问题。当 Spring 容器中存在多个相同类型的 Bean 时，如果我们使用`@Autowired`进行自动装配，Spring 会不知道应该选择哪个 Bean，这时就会抛出异常。`@Qualifier`注解可以帮助我们解决这个问题。
+
+`@Qualifier`注解可以与`@Autowired`注解配合使用，指定注入 Bean 的名称，这样 Spring 就可以根据名称来进行匹配，从而找到正确的 Bean 进行注入。例如，如果我们有两个类型为`DataSource`的 Bean，一个名为`dataSource1`，一个名为`dataSource2`，我们可以使用`@Qualifier("dataSource1")`来指定注入名为`dataSource1`的 Bean。
+
+此外，`@Qualifier`注解也可以用在方法参数上，表示该方法参数的注入 Bean 的名称。例如，我们可以在一个方法的参数上使用`@Qualifier("dataSource1")`，这样 Spring 就会将名为`dataSource1`的 Bean 注入到这个参数中。
+
+总的来说，`@Qualifier`注解的作用就是帮助我们在 Spring 的自动装配过程中解决歧义性问题，通过指定 Bean 的名称来进行精确的装配。
+
 ### 说说 Spring 中 Bean 的作用域
 
 在 Spring 框架中，Bean 的作用域决定了 Spring 容器如何创建 Bean 实例。Spring 框架提供了以下五种作用域：
@@ -211,6 +236,16 @@ BeanFactory 和 FactoryBean 是 Spring 框架中的两个重要接口，它们�
 
 总结一下，BeanFactory 是一个创建和管理 Bean 的容器，而 FactoryBean 则是一个创建复杂 Bean 的工厂类接口。在 Spring 的配置文件中，通过 `<bean>` 标签定义的 Bean 是由 BeanFactory 来管理的，而通过实现 FactoryBean 接口的类定义的 Bean 是由 FactoryBean 来创建和管理的。
 
+### Spring 是如何解决循环依赖的问题？
+
+Spring 框架解决循环依赖的问题主要通过三级缓存来实现。
+
+1. 一级缓存：Singleton Objects（单例对象），存放完全初始化好的 bean，也就是可以直接使用的。
+2. 二级缓存：Early Singleton Objects（早期的单例对象），存放原始的 bean 对象（尚未填充属性），用于解决循环依赖。
+3. 三级缓存：Singleton Factories（单例工厂），存放 bean 工厂对象，用于产生早期的 bean 对象。
+
+当 Spring 容器创建 bean 的时候，首先会检查一级缓存中是否存在，如果存在直接返回。如果不存在，再检查二级缓存，如果二级缓存存在，说明当前 bean 正在创建中，存在循环依赖，直接返回二级缓存中的对象。如果二级缓存也不存在，那么 Spring 容器会从三级缓存中获取对应的 bean 工厂对象，然后调用工厂方法创建一个新的 bean 对象，并放入二级缓存中，然后继续进行属性填充和初始化。当 bean 创建完成后，会将 bean 从二级缓存移动到一级缓存，并从三级缓存中移除。
+
 ## 面向切面编程
 
 ### 说说你对面向切面编程 (AOP) 的理解
@@ -234,7 +269,7 @@ Spring AOP 和 AspectJ AOP 都是面向切面编程的框架，它们都提供�
 
 ### 在 Spring AOP 中，多个切面的执行顺序如何控制？
 
-在面向切面编程（AOP）中，可能会有多个切面（Aspect）同时应用到同一个连接点（Join Point）。这种情况下，切面的执行顺序就变得非常重要。在 Spring AOP 中，可以通过以下两种方式来控制切面的执行顺序：
+在面向切面编程 (AOP) 中，可能会有多个切面 (Aspect) 同时应用到同一个连接点 (Join Point)。这种情况下，切面的执行顺序就变得非常重要。在 Spring AOP 中，可以通过以下两种方式来控制切面的执行顺序：
 
 1. 使用 @Order 注解：在 Spring AOP 中，可以使用 @Order 注解来指定切面的执行顺序。@Order 注解接受一个整数值作为参数，数值越小，切面的优先级越高，越先执行。例如，@Order(1) 的切面会比 @Order(2) 的切面先执行。
 2. 实现 Ordered 接口：除了使用 @Order 注解，还可以让切面类实现 Spring 的 Ordered 接口。这个接口有一个 getOrder() 方法，返回的整数值用于确定切面的执行顺序。同样，返回值越小，切面的优先级越高。
@@ -243,7 +278,7 @@ Spring AOP 和 AspectJ AOP 都是面向切面编程的框架，它们都提供�
 
 ### AspectJ 定义的通知类型有哪些？
 
-AspectJ 是一个面向切面编程（AOP）的框架，它定义了以下几种通知类型：
+AspectJ 是一个面向切面编程 (AOP) 的框架，它定义了以下几种通知类型：
 
 1. Before：这是最常见的通知类型，它在切点方法执行之前执行。这种类型的通知通常用于设置方法的预条件或者验证输入参数。
 2. After：这种通知在切点方法执行之后执行，无论方法执行成功还是失败。这种类型的通知通常用于清理资源或者记录日志。
@@ -251,11 +286,28 @@ AspectJ 是一个面向切面编程（AOP）的框架，它定义了以下几种
 4. After Throwing：这种通知在切点方法抛出异常后执行。这种类型的通知通常用于处理异常或者记录错误日志。
 5. Around：这是最强大的通知类型，它可以在切点方法执行之前和之后执行。这种类型的通知通常用于控制方法的执行，例如，可以决定是否执行切点方法，或者修改方法的输入参数和返回值。
 
+### Spring AOP 可以对哪些类增强，不能对哪些类增强？
+
+Spring AOP（面向切面编程）是 Spring 框架的一个重要组成部分，它允许开发者定义跨越多个点的行为，例如日志记录、事务管理等。然而，Spring AOP 并不能对所有的类进行增强。
+
+可以增强的类：
+
+1. Spring Bean：Spring AOP 主要是通过代理模式实现的，只有在 Spring 容器中的 Bean 才能被 Spring AOP 增强。
+2. 实现了接口的类：如果一个类实现了一个或多个接口，Spring AOP 可以为该类创建一个代理对象，该代理对象会实现与目标对象相同的接口。
+
+不能增强的类：
+
+1. final 类或方法：Spring AOP 不能对 final 类或方法进行增强，因为 final 类或方法不能被覆盖。
+2. 静态方法：Spring AOP 不能对静态方法进行增强，因为静态方法是属于类的，不属于实例。
+3. 构造方法：Spring AOP 不能对构造方法进行增强，因为构造方法是在对象创建时调用的，而 AOP 是在对象创建后进行的。
+4. 私有方法：Spring AOP 不能对私有方法进行增强，因为私有方法只能在类内部访问，无法通过代理进行访问。
+5. 不在 Spring 容器中的类：Spring AOP 只能对 Spring 容器中的 Bean 进行增强，如果一个类不在 Spring 容器中，那么 Spring AOP 就不能对其进行增强。
+
 ## Spring MVC
 
 ### Spring MVC 的核心组件有哪些？
 
-Spring MVC（Model-View-Controller）是一个用于创建 Web 应用程序的框架，它基于 Java 平台。以下是 Spring MVC 的核心组件：
+Spring MVC(Model-View-Controller) 是一个用于创建 Web 应用程序的框架，它基于 Java 平台。以下是 Spring MVC 的核心组件：
 
 1. DispatcherServlet：这是 Spring MVC 框架的前端控制器。所有的请求都会首先到达 DispatcherServlet，然后由它分发到相应的控制器。
 2. HandlerMapping：HandlerMapping 负责根据请求的 URL 找到相应的处理器。Spring MVC 提供了多种类型的 HandlerMapping，如 BeanNameUrlHandlerMapping，SimpleUrlHandlerMapping 等。
@@ -343,6 +395,17 @@ Spring 事务管理的主要原理是通过 AOP（面向切面编程）来实现
 
 Spring 事务管理还提供了一些高级特性，如事务的传播行为、事务的隔离级别、事务的只读设置等，这些特性可以用来处理更复杂的事务场景。
 
+### 说说事务的特性 (ACID)
+
+ACID 是用来描述数据库事务的四个关键特性的首字母缩写。
+
+1. 原子性 (Atomicity)：原子性是指事务是一个不可分割的工作单位，事务中的操作要么全部完成，要么全部不完成。在一个事务中，所有的操作和在一个单一的逻辑工作单元中的更改（包括对数据的访问和更新）都是原子的。也就是说，如果一个事务被其他事务中断，那么它可以被回滚到事务开始时的状态。
+2. 一致性 (Consistency)：一致性是指事务必须使数据库从一个一致性状态转变为另一个一致性状态。也就是说，一个事务一旦成功结束，那么它对数据库所做的所有的更新将形成数据库的一个一致性状态。如果数据库在事务开始之前是一致的，那么在事务结束之后，无论事务是否成功，数据库必须仍然是一致的。
+3. 隔离性 (Isolation)：隔离性是指在并发环境中，当多个事务同时访问数据库时，一个事务的执行不应该影响其他事务。一个事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务之间互不干扰。
+4. 持久性 (Durability)：持久性是指一旦事务完成（即提交），其对数据库的更改就必须是永久性的。即使在事务完成后系统崩溃，数据库也必须能够恢复到事务成功结束时的状态。
+
+这四个特性是数据库事务管理的基础，它们确保了数据库事务的完整性和可靠性。
+
 ### Spring 事务管理有几种方式
 
 Spring 事务管理有两种方式：编程式事务管理和声明式事务管理。
@@ -350,7 +413,7 @@ Spring 事务管理有两种方式：编程式事务管理和声明式事务管�
 1. 编程式事务管理：这种方式需要在代码中明确的开始和结束事务，这种方式的优点是可以在运行时根据需要决定何时开始事务，何时结束事务，何时提交事务，何时回滚事务。但是，这种方式的缺点是代码的侵入性较强，会使业务代码和事务管理代码混杂在一起。
 2. 声明式事务管理：这种方式主要是通过配置文件或者注解的方式来管理事务，这种方式的优点是非常简单，不需要在代码中进行事务的开始和结束，可以将事务管理和业务代码分离，降低了代码的耦合性。但是，这种方式的缺点是不能在运行时动态的决定何时开始事务，何时结束事务。
 
-### Spring 事务中, 有哪几种事务传播行为?
+### Spring 事务中, 有哪几种传播行为?
 
 Spring 事务管理中，定义了七种事务传播行为，它们分别是：
 
@@ -374,6 +437,3 @@ Spring 事务中的隔离级别主要有以下四种：
 4. SERIALIZABLE（串行化）：这是最高的事务隔离级别，它要求所有的事务序列化执行，也就是说在同一时刻只能有一个事务在执行。虽然这种隔离级别可以防止脏读、不可重复读以及幻读，但是由于只能串行化执行，所以效率低下。
 
 以上四种隔离级别，隔离级别越高，数据的一致性越好，但是并发性能越差。因此，在实际的开发中，需要根据业务需求来选择合适的隔离级别。
-
-## Spring Security
-
