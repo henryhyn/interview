@@ -1,6 +1,39 @@
 # 设计模式
 
-## 在 Java 中实现单例模式有哪些方式，它们的优缺点是什么？
+设计模式是在软件设计中常见的可重用解决方案，它们可以帮助解决在不同情况下可能遇到的一些常见问题。以下是 Java 中常见的设计模式：
+
+1. 创建型设计模式：
+   - 单例模式 (Singleton)
+   - 工厂模式 (Factory)
+   - 抽象工厂模式 (Abstract Factory)
+   - 建造者模式 (Builder)
+   - 原型模式 (Prototype)
+2. 结构型设计模式：
+   - 适配器模式 (Adapter)
+   - 桥接模式 (Bridge)
+   - 组合模式 (Composite)
+   - 装饰模式 (Decorator)
+   - 外观模式 (Facade)
+   - 享元模式 (Flyweight)
+   - 代理模式 (Proxy)
+3. 行为型设计模式：
+   - 责任链模式 (Chain of Responsibility)
+   - 命令模式 (Command)
+   - 解释器模式 (Interpreter)
+   - 迭代器模式 (Iterator)
+   - 中介者模式 (Mediator)
+   - 备忘录模式 (Memento)
+   - 观察者模式 (Observer)
+   - 状态模式 (State)
+   - 策略模式 (Strategy)
+   - 模板方法模式 (Template Method)
+   - 访问者模式 (Visitor)
+
+![](https://pic-hey-prod.oss-cn-qingdao.aliyuncs.com/henry-20230802195858419-401339-20170928225241215-295252070.png)
+
+## 创建型设计模式
+
+### 在 Java 中实现单例模式有哪些方式，它们的优缺点是什么？
 
 在 Java 中，实现单例模式主要有以下几种方式：
 

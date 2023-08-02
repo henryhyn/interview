@@ -17,14 +17,61 @@ Spring Boot 的启动流程可以分为以下几个步骤：
 
 以上就是 Spring Boot 的启动流程，这个流程涵盖了 Spring Boot 的核心功能，包括自动配置、依赖管理、Bean 管理等等。
 
-## 说说 Spring Boot 的自动装配
+## 说说 Spring Boot 的起步依赖
 
-Spring Boot 的自动装配是其核心功能之一，它可以极大地简化 Spring 应用程序的配置。自动装配的主要目标是减少和简化开发人员的工作，使他们能够更快地开始编写代码，而不是花费大量时间在配置和引导应用程序上。
+Spring Boot 的起步依赖是一种特殊的依赖关系，它可以简化构建配置。起步依赖本质上是一个 Maven 项目对象模型 (POM)，它定义了对其他库的传递依赖关系，这些库在进行 Spring Boot 应用程序开发时可能需要。这意味着，只需添加一个起步依赖，就可以自动包含一组相关的依赖项。
 
-自动装配的工作原理是，当 Spring Boot 应用程序启动时，它会自动扫描所有的 classpath，查找所有的 Spring 组件（如 beans，controllers，services 等）和各种配置类。然后，Spring Boot 会自动创建和配置这些组件的实例，并将它们注册到 Spring 应用程序上下文中。
+例如，如果你正在开发一个使用 Spring MVC 构建的 web 应用程序，你可能需要包含如下的起步依赖：
 
-这个过程是通过使用一系列的“starter”依赖来完成的。这些 starter 依赖是预先定义好的依赖集，它们包含了创建特定类型的应用程序所需的所有库和框架。例如，如果你正在创建一个 web 应用程序，你可以添加 spring-boot-starter-web 依赖，它会自动包含 Spring MVC，Tomcat 等等。
+```xml
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
 
-自动装配的另一个重要特性是条件装配。这意味着某些 bean 或配置只有在满足特定条件时才会被创建和注册。例如，如果 classpath 中存在特定的类，或者某个 bean 已经被定义，或者某个系统属性有特定的值等等。这使得自动装配可以适应各种不同的环境和需求。
+这个起步依赖将自动包含 Spring MVC、Tomcat、Spring Boot 等等相关的依赖项。这样，你就不需要手动添加每一个可能需要的依赖项。
 
-总的来说，Spring Boot 的自动装配大大简化了 Spring 应用程序的配置，使开发人员可以更专注于编写业务代码。
+Spring Boot 提供了许多不同的起步依赖，包括：
+
+- spring-boot-starter：这是核心起步依赖，包含自动配置支持、日志和 YAML。
+- spring-boot-starter-data-jpa：包含了使用 Spring Data JPA 进行数据持久化的必要库。
+- spring-boot-starter-security：包含了 Spring Security。
+- spring-boot-starter-test：包含了常用的测试依赖，如 JUnit、Spring Test、Mockito 等。
+
+使用起步依赖可以极大地简化构建配置，让你可以专注于应用程序的开发，而不是花费大量时间在管理依赖关系上。
+
+## 自动装配
+
+### 什么是 SpringBoot 自动装配？
+
+SpringBoot 自动装配是 SpringBoot 框架的一个重要特性，它可以帮助开发者自动地装配应用程序所需要的各种组件和配置，极大地简化了 Spring 应用的初始搭建以及后续的维护工作。
+
+SpringBoot 自动装配的核心是 @EnableAutoConfiguration 注解，这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动装配。
+
+例如，如果你在项目中添加了 spring-boot-starter-web 依赖，SpringBoot 就会自动装配与 Web 开发相关的各种组件，如 DispatcherServlet、ResourceHandlers、MessageConverters 等。如果你在项目中添加了 spring-boot-starter-data-jpa 依赖，SpringBoot 就会自动装配与 JPA 数据访问相关的各种组件，如 EntityManagerFactory、DataSource、TransactionManager 等。
+
+这种自动装配的机制，使得开发者可以更加专注于业务逻辑的开发，而不需要花费大量的时间去手动配置和管理各种组件。
+
+### SpringBoot 是如何实现自动装配的？如何实现按需加载？
+
+SpringBoot 的自动装配是通过 @EnableAutoConfiguration 注解实现的。这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动装配。
+
+具体来说，SpringBoot 在启动时会加载所有的自动配置类，这些类都是在 spring.factories 文件中声明的。每个自动配置类都会尝试根据 classpath 和其他条件来决定是否应该启用自己的配置。例如，如果 classpath 中存在 H2 数据库的类，并且用户没有配置任何数据库连接信息，那么 H2 数据库的自动配置就会启用。
+
+这种按需加载的机制，是通过 @Conditional 注解实现的。@Conditional 注解可以用来控制配置类或者配置方法是否应该被 Spring 容器加载。例如，@ConditionalOnClass 注解表示只有当 classpath 中存在指定的类时，才会加载配置；@ConditionalOnMissingBean 注解表示只有当 Spring 容器中不存在指定的 Bean 时，才会加载配置。
+
+通过这种方式，SpringBoot 可以根据项目的实际需要，动态地加载或者忽略某些配置，从而实现了按需加载。
+
+### 如何实现一个 SpringBoot Starter？
+
+创建一个 SpringBoot Starter 主要包括以下步骤：
+
+1. 创建一个 Maven 项目：首先，你需要创建一个新的 Maven 项目，这个项目将包含你的 Starter 的代码和配置。
+2. 添加依赖：在项目的 pom.xml 文件中，你需要添加 SpringBoot Starter 的依赖，以及你的 Starter 所需要的其他依赖。
+3. 创建自动配置类：在项目中，你需要创建一个或多个自动配置类，这些类将定义你的 Starter 如何自动配置应用程序。自动配置类通常会使用 @Configuration、@EnableConfigurationProperties、@ConditionalOnClass 等注解。
+4. 创建配置属性类：如果你的 Starter 需要让用户提供一些配置，你可以创建一个或多个配置属性类。配置属性类通常会使用 @ConfigurationProperties 注解，并提供一些带有 @Value 注解的字段，用于接收用户的配置。
+5. 创建 META-INF/spring.factories 文件：在项目的 resources/META-INF 目录下，你需要创建一个 spring.factories 文件。在这个文件中，你需要指定你的自动配置类的全类名，以便 SpringBoot 在启动时能够找到并加载它。
+6. 打包并发布：最后，你可以使用 Maven 的 package 命令来打包你的 Starter，然后将它发布到 Maven 仓库，以便其他项目可以使用。
+
+以上就是创建一个 SpringBoot Starter 的基本步骤。需要注意的是，创建 Starter 需要对 SpringBoot 的自动配置机制有深入的理解，并且需要根据 Starter 的实际需求来进行适当的设计和实现。

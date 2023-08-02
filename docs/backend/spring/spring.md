@@ -1,6 +1,95 @@
 # Spring
 
-## 说说你对 IoC 的理解
+## 概念与常识
+
+### 什么是 Spring Framework?
+
+Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编程和配置模型，用于现代化的 Java 企业应用程序。Spring Framework 的核心特性可以用于任何 Java 应用程序，但对于构建企业级应用程序还有扩展，提供了大量的选择。
+
+Spring Framework 的主要特性包括：
+
+1. 依赖注入：Spring Framework 提供了一种强大的依赖注入机制，使得对象之间的依赖关系可以在运行时动态地进行配置和管理。
+2. 面向切面编程 (AOP)：Spring Framework 提供了对面向切面编程的支持，使得开发者可以更好地处理业务逻辑和系统服务的分离。
+3. 事务管理：Spring Framework 提供了一种统一的事务管理接口，可以对各种事务管理策略进行抽象和封装。
+4. MVC Web 框架：Spring Framework 提供了一个全功能的 MVC Web 框架，使得开发者可以更方便地开发 Web 应用程序。
+5. 数据访问与集成：Spring Framework 提供了对 JDBC、ORM、OXM、JMS 和事务模块的支持，使得数据访问和集成变得更加简单。
+6. 测试：Spring Framework 提供了对 JUnit 和 TestNG 测试框架的支持，使得开发者可以更方便地进行单元测试和集成测试。
+
+Spring Framework 的目标是使得 Java 开发者可以更加专注于业务逻辑的开发，而不是底层的技术实现。
+
+### Spring Framework 包含哪些模块？
+
+Spring 4.x 主要模块
+
+![](https://pic-hey-prod.oss-cn-qingdao.aliyuncs.com/henry-20230802214027104-spring4.png)
+
+Spring 5.x 主要模块
+
+![](https://pic-hey-prod.oss-cn-qingdao.aliyuncs.com/henry-20230802214033975-spring5.png)
+
+Spring Framework 是由多个模块组成的，这些模块提供了一系列的服务和功能。Spring 5.x 版本中 Web 模块的 Portlet 组件已经被废弃掉，同时增加了用于异步响应式处理的 WebFlux 组件。以下是 Spring Framework 的主要模块：
+
+1. Spring Core：这是 Spring Framework 的核心模块，提供了依赖注入 (DI) 和控制反转 (IoC) 的功能。
+2. Spring AOP：这个模块提供了面向切面编程的功能，允许开发者定义方法拦截器和切点，以将代码逻辑分离出来。
+3. Spring DAO：这个模块提供了与 JDBC 的集成，包括异常处理和资源管理。
+4. Spring ORM：这个模块提供了与各种对象关系映射 (ORM) 技术的集成，包括 Hibernate、JPA 等。
+5. Spring Web MVC：这是 Spring 的 Web 框架，提供了一个分离式的方法来开发 Web 应用。
+6. Spring WebFlux：这是 Spring 5.0 新增的模块，提供了对响应式编程的支持。
+7. Spring Test：这个模块提供了对单元测试和集成测试的支持。
+8. Spring Context：这个模块支持国际化 (i18n)、事件传播、资源加载和透明创建上下文，如 JEE 或 EJB。
+9. Spring Transaction：这个模块支持编程和声明式的事务管理。
+
+这些模块可以根据需要进行选择和使用，使得 Spring Framework 具有很高的灵活性和可扩展性。
+
+### 什么是 Spring MVC?
+
+Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应用程序的模型-视图-控制器 (MVC) 框架。Spring MVC 提供了一种分离式的方法来构建 Web 应用，通过将应用程序逻辑分解为模型、视图和控制器三个部分，使得开发、测试和维护工作变得更加简单和清晰。
+
+以下是 Spring MVC 的主要组件：
+
+1. 模型 (Model)：模型代表了业务数据和业务逻辑。它可以是一个简单的 Java Bean，也可以是一个复杂的业务服务类。
+2. 视图 (View)：视图负责数据的展示，它通常是一个 JSP 或 Thymeleaf 页面，但也可以是任何其他类型的视图。
+3. 控制器 (Controller)：控制器处理用户请求，并控制模型和视图。在 Spring MVC 中，控制器通常是一个实现了特定接口或注解的 Java 类。
+4. DispatcherServlet：这是 Spring MVC 的中心 Servlet，它负责将请求路由到相应的控制器。
+5. HandlerMapping：HandlerMapping 负责确定由哪个控制器处理请求。
+6. ViewResolver：ViewResolver 负责解析视图名并找到相应的视图。
+
+Spring MVC 提供了丰富的功能，包括数据验证、表单处理、文件上传等，同时也提供了对 RESTful Web 服务的支持。
+
+### 什么是 Spring Boot?
+
+Spring Boot 是一个基于 Spring Framework 的开源 Java-based 框架，用于创建独立的、生产级别的 Spring 应用程序。它旨在简化 Spring 应用程序的初始设置和开发过程。Spring Boot 通过自动配置 Spring 和第三方库，使开发人员能够更快速、更有效地开始和运行应用程序。
+
+Spring Boot 的主要特点包括：
+
+1. 创建独立的 Spring 应用程序：Spring Boot 允许你创建可以直接运行的应用程序，无需传统的部署过程。
+2. 嵌入式的服务器：Spring Boot 应用程序可以直接使用内嵌的 Tomcat、Jetty 或 Undertow 服务器，无需部署 WAR 文件。
+3. 自动配置：Spring Boot 可以根据你的项目需求自动配置 Spring。例如，如果你的项目路径下有 H2 数据库，那么 Spring Boot 会自动配置一个 H2 数据库。
+4. 提供生产就绪型功能：Spring Boot 提供了一些生产就绪型功能，如指标、健康检查和外部化配置等。
+5. 无需 XML 配置：Spring Boot 不需要任何繁琐的 XML 配置。所有的配置都可以通过 Java Config 进行。
+6. 依赖管理：Spring Boot 通过提供一系列的 starter POMs(Project Object Model)，简化了项目的依赖管理。
+
+总的来说，Spring Boot 的目标是提供一种快速和简便的方式来配置和运行 Spring 应用程序，使开发人员能够更专注于应用程序的开发，而不是配置和依赖管理。
+
+### 什么是 Spring Cloud?
+
+Spring Cloud 是一个基于 Spring Boot 提供的一系列云应用开发工具的集合，它简化了分布式系统的开发、部署和维护。Spring Cloud 提供了在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态）中常见模式的实现。使用 Spring Cloud，开发者可以快速地构建一些常见的分布式系统和微服务架构模式。
+
+Spring Cloud 的主要功能包括：
+
+1. 分布式/版本化配置：Spring Cloud 提供了服务器和客户端的支持，用于外部化配置在分布式系统中的管理。
+2. 服务注册和发现：Spring Cloud 提供了对多种服务注册和发现服务的支持，如 Netflix Eureka, Consul, Zookeeper 等。
+3. 路由：Spring Cloud 提供了对请求路由的支持，可以将请求路由到合适的服务实例。
+4. 服务调用：Spring Cloud 提供了对服务调用的支持，可以使用各种方式（如 HTTP, AMQP 等）调用服务。
+5. 负载均衡：Spring Cloud 提供了对负载均衡的支持，可以在客户端进行负载均衡。
+6. 断路器：Spring Cloud 提供了对断路器的支持，可以防止服务的故障影响到其他服务。
+7. 分布式消息：Spring Cloud 提供了对分布式消息的支持，可以使用消息驱动的方式进行服务之间的通信。
+
+通过使用 Spring Cloud，开发者可以更加专注于业务逻辑的开发，而不需要关心分布式系统的复杂性。
+
+## 控制反转
+
+### 说说你对控制反转 (IoC) 设计原则的理解
 
 IoC，全称 Inversion of Control，中文名为“控制反转”，是面向对象编程中的一种设计原则，用于减少代码的耦合度。这种设计原则的核心思想是将对象的创建和对象之间的调用关系交给第三方（例如框架或容器）来控制，而不是由对象自身来控制。这样做的好处是可以降低对象之间的依赖关系，提高系统的可扩展性和可维护性。
 
@@ -12,7 +101,119 @@ IoC 的实现方式有很多种，如依赖注入 (DI)、依赖查找 (DL)、模
 
 总的来说，IoC 是一种很好的设计原则，它可以帮助我们设计出低耦合、高内聚的系统，提高代码的可读性和可维护性。
 
-## 说说你对 AOP 的理解
+### Java 中的 Bean 指的是什么?
+
+在 Java 编程中，Bean 通常指的是遵循特定命名规则的 Java 类，这些规则包括有一个无参数的构造函数，所有属性都是私有的（通过 getter 和 setter 方法进行访问），并且该类应该是可序列化的。Java Beans 主要用于封装多个对象作为一个单一的对象（即 Bean）。
+
+Java Beans 是一种 Java 语言的组件技术，可以被视为一种可重用的软件组件，或者说是一个封装了多个对象的对象。它们主要用于处理数据，但也可以包含业务逻辑。
+
+Java Beans 的主要特点包括：
+
+1. 可重用：一旦创建，Java Beans 可以在多个项目中重复使用，无需进行任何修改。
+2. 可自定义：Java Beans 的属性可以根据需要进行自定义。
+3. 可序列化：Java Beans 可以被转换为字节流，这使得它们可以轻松地在网络上进行传输，或者可以被存储在磁盘上以供以后使用。
+4. 支持事件处理：Java Beans 支持事件监听和处理，这使得它们可以响应用户的交互操作。
+
+在 Java 开发中，Beans 常常被用于如 JavaServer Pages (JSP)、Enterprise JavaBeans (EJB)、Spring Framework 等技术中。
+
+### 什么是 Spring Bean？
+
+Spring Bean 是 Spring 框架中的一个基本概念。在 Spring 中，Bean 是由 Spring IoC 容器实例化、组装和管理的对象。Spring Bean 是 Spring 应用的主要组成部分，它们是在 Spring IoC 容器中定义的。
+
+Spring Bean 是由 Spring IoC 容器创建的 Java 对象。这些对象是在 Spring 容器启动时实例化的，并且可以通过依赖注入 (DI) 的方式连接在一起，以便在应用程序中使用。
+
+Spring Bean 可以通过在 XML 文件中定义，或者通过使用注解和 Java 配置来创建。一旦定义，Spring IoC 容器就会负责创建和管理这些 Bean。
+
+Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是由 Spring IoC 容器管理的。这使得开发者可以专注于编写业务逻辑，而不必担心对象的生命周期和依赖关系。
+
+总的来说，Spring Bean 是 Spring 应用中的重要组成部分，它们由 Spring IoC 容器创建和管理，使得开发者可以更加专注于业务逻辑的开发。
+
+### 在 Spring 框架中，将一个类声明为 Bean 的注解有哪些?
+
+在 Spring 框架中，有多种方式可以将一个类声明为 Bean，以下是一些常用的注解：
+
+1. @Component：这是最常用的注解，用于将任何类定义为 Spring Bean。
+2. @Service：这是一个特殊类型的@Component 注解，用于标记服务层的类。虽然@Service 注解本质上与@Component 注解没有区别，但使用@Service 注解可以为阅读代码的人提供更多上下文信息，说明这个类是服务层的组件。
+3. @Repository：这也是一个特殊类型的@Component 注解，用于标记数据访问对象 (DAO) 层的类。使用@Repository 注解可以为阅读代码的人提供更多上下文信息，说明这个类是数据访问层的组件。
+4. @Controller：这是另一个特殊类型的@Component 注解，用于标记控制器类。使用@Controller 注解可以为阅读代码的人提供更多上下文信息，说明这个类是控制层的组件。
+
+### @Component 和 @Bean 的区别是什么？
+
+@Component 和 @Bean 都是 Spring 框架中用于声明 Spring Bean 的注解，但它们的用途和工作方式有所不同。
+
+1. @Component：这个注解通常用于类级别，表示该类是一个 Spring Bean。Spring 会自动扫描带有 @Component 注解的类，并将它们实例化为 Spring Bean。@Component 是一种立即实例化 Bean 的方式，即当 Spring 启动时，它会立即创建和配置这些 Bean。
+2. @Bean：这个注解通常用于方法级别，表示该方法返回一个 Spring Bean。这个方法需要在一个带有 @Configuration 注解的类中。@Bean 提供了一种延迟实例化 Bean 的方式，即只有当应用程序首次请求该 Bean 时，Spring 才会调用该方法来创建和配置 Bean。
+
+总的来说，@Component 和 @Bean 都可以用于声明 Spring Bean，但它们的使用场景和方式有所不同。@Component 通常用于类级别，而 @Bean 通常用于方法级别。此外，@Component 是一种立即实例化 Bean 的方式，而 @Bean 是一种延迟实例化 Bean 的方式。
+
+### 在 Spring 框架中，注入 Bean 的注解有哪些？
+
+在 Spring 框架中，有多种注解可以用于注入（或称为“装配”）Bean，以下是一些常用的注解：
+
+1. @Autowired：这是最常用的注解，用于自动装配 Bean。Spring 会在上下文中查找匹配的 Bean 来注入。如果找到多个匹配的 Bean，Spring 会根据类型来选择正确的 Bean。如果没有找到匹配的 Bean，Spring 会抛出异常。
+2. @Inject：这个注解与@Autowired 功能类似，也是用于自动装配 Bean。不过，@Inject 是来自 Java 的 JSR-330 规范，而@Autowired 是 Spring 的专有注解。
+3. @Resource：这个注解也用于自动装配，但它是通过名称来装配的。如果没有指定名称，Spring 会使用字段名或者 setter 方法名作为默认名称。@Resource 是来自 Java 的 JSR-250 规范。
+
+### 说说 @Autowired 和 @Resource 注解的区别
+
+@Autowired 和 @Resource 都是用于依赖注入的注解，它们都可以用于字段，构造函数，和 setter 方法上。但是，它们之间还是存在一些差异的。
+
+1. 来源：@Autowired 是由 Spring 提供的注解，而@Resource 是由 JDK 提供的注解，属于 JSR-250 规范。
+2. 注入方式：@Autowired 是按类型装配的，它可以配合@Qualifier 注解进行更细粒度的控制。如果 Spring 容器中没有找到匹配的 bean 来装配，那么它会抛出异常。但是，你可以将@Autowired 的 required 属性设置为 false 来改变这种行为。而@Resource 默认是按名称装配的，如果没有指定 name 属性，当注解写在字段上时，默认取字段名作为 bean 名称寻找依赖，当写在 setter 方法上时，取属性名进行装配。如果没有找到匹配的 bean，它也会抛出异常。
+3. 支持范围：@Autowired 只能用于 Spring 的 bean，而@Resource 可以用于所有的 Java 对象。
+4. 使用场景：@Autowired 通常用于 Spring 框架中，而@Resource 更多的是用于 Java EE 应用中。
+
+### 说说 Spring 中 Bean 的作用域
+
+在 Spring 框架中，Bean 的作用域决定了 Spring 容器如何创建 Bean 实例。Spring 框架提供了以下五种作用域：
+
+1. Singleton：这是默认的作用域。对于每一个 Spring IoC 容器，一个 Bean 定义对应一个单一的实例。无论我们何时要求容器提供这个 Bean，都会得到同一个实例。
+2. Prototype：对于每一个 Bean 定义，Spring 容器可以创建多个实例。每当我们请求容器提供这个 Bean 时，都会得到一个新的实例。
+3. Request：这个作用域仅在基于 web 的 Spring 应用程序中有效。每次 HTTP 请求都会创建一个新的 Bean，该 Bean 仅在当前 HTTP 请求内有效。
+4. Session：这个作用域也仅在基于 web 的 Spring 应用程序中有效。Spring 容器会为每个 HTTP Session 创建一个 Bean 实例。这个 Bean 在整个 HTTP Session 内都是有效的。
+5. Global Session：这个作用域仅在基于 web 的 Spring 应用程序中有效。Spring 容器会为每个全局 HTTP Session 创建一个 Bean 实例。这个 Bean 在整个全局 HTTP Session 内都是有效的。
+
+这些作用域提供了在不同情况下控制 Bean 实例创建和生命周期的灵活性。例如，对于无状态的 Bean，我们可能会选择 Prototype 作用域，而对于需要在多个请求之间保持状态的 Bean，我们可能会选择 Session 作用域。
+
+### Spring Bean 是线程安全的吗？
+
+Spring Bean 的线程安全性取决于你如何使用它。默认情况下，Spring Bean 是单例的，这意味着 Spring 容器只创建一个实例，并且所有的请求都会使用这个单一实例。这就可能导致线程安全问题，因为多个线程可能会同时访问和修改这个实例的状态。
+
+然而，你可以通过在 Spring 配置中设置 bean 的 scope 为 prototype，来让 Spring 为每个请求创建一个新的 bean 实例。这样，每个线程都会有自己的 bean 实例，从而避免了线程安全问题。但是，这会增加系统的开销，因为需要为每个请求创建新的实例。
+
+另外，你也可以通过在你的代码中使用同步块或者 Java 并发工具，如 ReentrantLock，来确保你的单例 bean 是线程安全的。但是，这会增加代码的复杂性，并可能导致性能问题。
+
+总的来说，Spring Bean 的线程安全性取决于你如何使用它，以及你的应用程序的具体需求。你需要根据你的应用程序的需求，来选择最适合的方法来确保线程安全性。
+
+### 说说 Spring 中 Bean 的生命周期
+
+Spring Bean 的生命周期是指从 Spring 容器中创建 Bean 实例，到初始化，使用，销毁的过程。以下是 Spring Bean 生命周期的详细步骤：
+
+1. 实例化：Spring 容器在 Bean 的定义中找到对应的类，然后使用 Java 的反射机制创建一个 Bean 的实例。
+2. 设置属性值：Spring 根据 Bean 的定义配置信息，将这些属性值设置到 Bean 实例中。
+3. 如果 Bean 实现了 BeanNameAware 接口，Spring 会将 Bean 的 ID 传递给 setBeanName() 方法。
+4. 如果 Bean 实现了 BeanFactoryAware 接口，Spring 会将 BeanFactory 容器实例传递给 setBeanFactory() 方法。
+5. 如果 Bean 实现了 ApplicationContextAware 接口，Spring 会将应用上下文的引用传递给 setApplicationContext() 方法。
+6. 如果 Bean 实现了 BeanPostProcessor 接口，Spring 将会调用它们的 postProcessBeforeInitialization() 方法。
+7. 如果 Bean 实现了 InitializingBean 接口，Spring 将会调用它们的 afterPropertiesSet() 方法。如果 Bean 在配置文件中还声明了 init-method，那么该方法也会被调用。
+8. 如果 Bean 实现了 BeanPostProcessor 接口，Spring 将会调用它们的 postProcessAfterInitialization() 方法。
+9. 此时，Bean 已经准备就绪，可以被应用程序使用了，它将一直驻留在应用上下文中，直到应用上下文被销毁。
+10. 如果 Bean 实现了 DisposableBean 接口，Spring 将会调用它的 destroy() 方法。同样，如果 Bean 在配置文件中声明了 destroy-method，那么该方法也会被调用。
+
+以上就是 Spring Bean 的生命周期。在这个过程中，Spring 提供了很多扩展点，我们可以通过实现特定的接口或者在配置文件中声明 init-method 和 destroy-method 方法，来自定义 Bean 的初始化和销毁过程。
+
+### 说说 BeanFactory 和 FactoryBean 的区别
+
+BeanFactory 和 FactoryBean 是 Spring 框架中的两个重要接口，它们在功能和用途上有着明显的区别。
+
+1. BeanFactory：这是 Spring 框架中最基础的容器，提供了配置框架和基本功能，如管理对象的生命周期，依赖注入等。BeanFactory 使用延迟加载，只有当客户端需要访问创建对象时，才会对其进行初始化和依赖关系的装配。这种方式适合在资源有限并且需要延迟初始化的情况。
+2. FactoryBean：这是一个工厂类相关的接口，用户可以通过实现这个接口定制实例化 Bean 的逻辑。FactoryBean 可以产生一个复杂的 Bean，这个 Bean 可能需要通过一些特殊的配置和初始化过程。当一个 Bean 不能通过传统的构造函数或者工厂方法来创建，或者创建 Bean 的过程中需要进行一些额外的处理时，可以使用 FactoryBean。
+
+总结一下，BeanFactory 是一个创建和管理 Bean 的容器，而 FactoryBean 则是一个创建复杂 Bean 的工厂类接口。在 Spring 的配置文件中，通过 `<bean>` 标签定义的 Bean 是由 BeanFactory 来管理的，而通过实现 FactoryBean 接口的类定义的 Bean 是由 FactoryBean 来创建和管理的。
+
+## 面向切面编程
+
+### 说说你对面向切面编程 (AOP) 的理解
 
 AOP，全称为面向切面编程 (Aspect Oriented Programming)，是一种编程范式，其主要目标是提高程序的模块化。AOP 主要是针对业务处理过程中的切面进行提取，它所面对的是处理过程中的某个步骤或阶段，以获得更加清晰的业务逻辑。
 
@@ -22,36 +223,157 @@ AOP 的主要实现方式是通过预编译方式和运行期动态代理实现�
 
 在 Java 中，Spring 框架的 AOP 模块就是一个很好的实现。它可以帮助我们在不修改源代码的情况下，增加额外的处理逻辑。
 
-## 说说 Bean 的生命周期
+### Spring AOP 和 AspectJ AOP 有什么区别？
 
-Bean 的生命周期是指从创建到销毁的过程。在 Spring 框架中，Bean 的生命周期主要包括以下步骤：
+Spring AOP 和 AspectJ AOP 都是面向切面编程的框架，它们都提供了在程序运行时动态地应用切面的能力。然而，它们之间存在一些关键的区别：
 
-1. 实例化：Spring 容器通过调用 Bean 的构造函数或工厂方法来创建 Bean 实例。
-2. 属性设置：Spring 容器通过 Bean 定义中的属性值或者引用其他 Bean 来设置 Bean 的属性。
-3. 初始化：Spring 容器调用 Bean 的初始化方法。如果 Bean 实现了 InitializingBean 接口，Spring 会调用其 afterPropertiesSet 方法。如果在 Bean 定义中通过 init-method 属性指定了初始化方法，Spring 会调用该方法。
-4. Bean 的使用：此时，Bean 已经准备好被应用程序使用了。它将在 Spring 容器中存在一段时间，这个时间取决于 Bean 的作用域。
-5. 销毁：当容器关闭时，Spring 会调用 Bean 的销毁方法。如果 Bean 实现了 DisposableBean 接口，Spring 会调用其 destroy 方法。如果在 Bean 定义中通过 destroy-method 属性指定了销毁方法，Spring 会调用该方法。
+1. 实现方式：Spring AOP 是通过运行时代理来实现的，而 AspectJ 是通过编译时增强或类加载时增强来实现的。这意味着 Spring AOP 的运行时性能可能会稍差一些，因为它需要创建和管理代理对象。相反，AspectJ 的运行时性能可能会更好，因为它在编译时就已经完成了所有的工作。
+2. 功能范围：Spring AOP 的功能相对较少，主要支持方法级别的拦截，而 AspectJ 提供了更全面的切面编程支持，包括构造函数拦截、静态方法拦截、字段拦截等。
+3. 集成：Spring AOP 更容易与 Spring 框架集成，因为它是 Spring 框架的一部分。而 AspectJ 虽然可以与 Spring 框架集成，但需要额外的配置和管理。
+4. 学习曲线：Spring AOP 的学习曲线相对较平缓，因为它的语法和概念都比较简单。而 AspectJ 的学习曲线可能会更陡峭，因为它的语法和概念都比较复杂。
 
-以上就是 Spring 中 Bean 的生命周期。在这个过程中，Spring 提供了一些扩展点，允许我们在 Bean 的生命周期的某些阶段执行自定义的逻辑，例如 BeanPostProcessor 接口就是一个很好的例子。
+### 在 Spring AOP 中，多个切面的执行顺序如何控制？
 
-## 说说@Autowired 和@Resource 注解的区别
+在面向切面编程（AOP）中，可能会有多个切面（Aspect）同时应用到同一个连接点（Join Point）。这种情况下，切面的执行顺序就变得非常重要。在 Spring AOP 中，可以通过以下两种方式来控制切面的执行顺序：
 
-@Autowired 和@Resource 都是用于依赖注入的注解，它们都可以用于字段，构造函数，和 setter 方法上。但是，它们之间还是存在一些差异的。
+1. 使用 @Order 注解：在 Spring AOP 中，可以使用 @Order 注解来指定切面的执行顺序。@Order 注解接受一个整数值作为参数，数值越小，切面的优先级越高，越先执行。例如，@Order(1) 的切面会比 @Order(2) 的切面先执行。
+2. 实现 Ordered 接口：除了使用 @Order 注解，还可以让切面类实现 Spring 的 Ordered 接口。这个接口有一个 getOrder() 方法，返回的整数值用于确定切面的执行顺序。同样，返回值越小，切面的优先级越高。
 
-1. 来源：@Autowired 是由 Spring 提供的注解，而@Resource 是由 JDK 提供的注解，属于 JSR-250 规范。
-2. 注入方式：@Autowired 是按类型装配的，它可以配合@Qualifier 注解进行更细粒度的控制。如果 Spring 容器中没有找到匹配的 bean 来装配，那么它会抛出异常。但是，你可以将@Autowired 的 required 属性设置为 false 来改变这种行为。而@Resource 默认是按名称装配的，如果没有指定 name 属性，当注解写在字段上时，默认取字段名作为 bean 名称寻找依赖，当写在 setter 方法上时，取属性名进行装配。如果没有找到匹配的 bean，它也会抛出异常。
-3. 支持范围：@Autowired 只能用于 Spring 的 bean，而@Resource 可以用于所有的 Java 对象。
-4. 使用场景：@Autowired 通常用于 Spring 框架中，而@Resource 更多的是用于 Java EE 应用中。
+需要注意的是，如果两个切面的优先级相同（即 @Order 注解的值相同或者 getOrder() 方法返回的值相同），那么这两个切面的执行顺序是不确定的。
 
-## 说说 Spring 事务管理
+### AspectJ 定义的通知类型有哪些？
+
+AspectJ 是一个面向切面编程（AOP）的框架，它定义了以下几种通知类型：
+
+1. Before：这是最常见的通知类型，它在切点方法执行之前执行。这种类型的通知通常用于设置方法的预条件或者验证输入参数。
+2. After：这种通知在切点方法执行之后执行，无论方法执行成功还是失败。这种类型的通知通常用于清理资源或者记录日志。
+3. After Returning：这种通知在切点方法成功执行之后执行。这种类型的通知通常用于处理方法的返回值或者记录成功的日志。
+4. After Throwing：这种通知在切点方法抛出异常后执行。这种类型的通知通常用于处理异常或者记录错误日志。
+5. Around：这是最强大的通知类型，它可以在切点方法执行之前和之后执行。这种类型的通知通常用于控制方法的执行，例如，可以决定是否执行切点方法，或者修改方法的输入参数和返回值。
+
+## Spring MVC
+
+### Spring MVC 的核心组件有哪些？
+
+Spring MVC（Model-View-Controller）是一个用于创建 Web 应用程序的框架，它基于 Java 平台。以下是 Spring MVC 的核心组件：
+
+1. DispatcherServlet：这是 Spring MVC 框架的前端控制器。所有的请求都会首先到达 DispatcherServlet，然后由它分发到相应的控制器。
+2. HandlerMapping：HandlerMapping 负责根据请求的 URL 找到相应的处理器。Spring MVC 提供了多种类型的 HandlerMapping，如 BeanNameUrlHandlerMapping，SimpleUrlHandlerMapping 等。
+3. Controller：Controller 是处理用户请求的组件。在 Spring MVC 中，你可以创建一个 Java 类作为 Controller，并使用@RequestMapping 注解来映射 URL 到具体的处理方法。
+4. ModelAndView：ModelAndView 是一个包含模型和视图的对象。模型是一个包含数据的对象，视图是一个负责渲染模型的对象。
+5. ViewResolver：ViewResolver 负责解析视图名字并返回一个具体的视图对象。Spring MVC 提供了多种类型的 ViewResolver，如 InternalResourceViewResolver，JstlViewResolver 等。
+6. HandlerAdapter：HandlerAdapter 负责调用 Controller 的处理方法，并返回一个 ModelAndView 对象。
+7. HandlerExceptionResolver：HandlerExceptionResolver 负责处理在处理请求过程中抛出的异常。
+
+### 介绍一下 Spring MVC 的执行流程
+
+Spring MVC 是一个基于 Java 的强大的 Web 应用框架，它实现了 Model-View-Controller(MVC) 设计模式。以下是 Spring MVC 的执行流程：
+
+1. 用户发送请求到前端控制器 DispatcherServlet。
+2. DispatcherServlet 收到请求后，调用 HandlerMapping 处理器映射器。
+3. 处理器映射器找到具体的处理器 (可以根据 xml 配置、注解进行查找)，生成处理器对象及处理器拦截器 (如果有则生成) 一并返回给 DispatcherServlet。
+4. DispatcherServlet 通过 HandlerAdapter 处理器适配器调用处理器。
+5. 执行处理器 (Controller，也叫后端控制器)。
+6. Controller 执行完成返回 ModelAndView。
+7. HandlerAdapter 将 controller 执行结果 ModelAndView 返回给 DispatcherServlet。
+8. DispatcherServlet 将 ModelAndView 传给 ViewReslover 视图解析器。
+9. ViewReslover 解析后返回具体 View。
+10. DispatcherServlet 对 View 进行渲染视图（即将模型数据填充至视图中）。
+11. DispatcherServlet 响应用户。
+
+这个流程涵盖了 Spring MVC 的主要组件，包括 DispatcherServlet，HandlerMapping，Controller，ModelAndView，ViewResolver 等。每个组件都有其特定的角色，共同协作完成请求的处理和响应。
+
+### 在 Spring MVC 中，统一异常处理怎么做？
+
+在 Spring MVC 中，我们可以通过以下几种方式来进行统一的异常处理：
+
+1. 使用`@ExceptionHandler`注解：这是最常用的方法，我们可以在 Controller 类中定义一个方法来处理特定类型的异常，然后使用`@ExceptionHandler`注解来标记它。这个方法将会处理该 Controller 中所有的这种类型的异常。
+
+```java
+@Controller
+public class ExampleController {
+
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", e);
+        mav.addObject("url", req.getRequestURL());
+        mav.setViewName("error");
+        return mav;
+    }
+}
+```
+2. 使用`@ControllerAdvice`注解：这是一个全局的异常处理器，它可以处理所有 Controller 抛出的异常。我们可以创建一个类，然后使用`@ControllerAdvice`注解来标记它，然后在这个类中定义处理异常的方法，并使用`@ExceptionHandler`注解来标记。
+
+```java
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(value = Exception.class)
+    public ModelAndView defaultErrorHandler(HttpServletRequest req, Exception e) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", e);
+        mav.addObject("url", req.getRequestURL());
+        mav.setViewName("error");
+        return mav;
+    }
+}
+```
+3. 实现`HandlerExceptionResolver`接口：这是一个更底层的方法，我们可以创建一个类来实现`HandlerExceptionResolver`接口，然后在`resolveException`方法中处理异常。
+
+```java
+public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
+
+    @Override
+    public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("exception", ex);
+        mav.addObject("url", request.getRequestURL());
+        mav.setViewName("error");
+        return mav;
+    }
+}
+```
+
+## Spring 事务
 
 Spring 事务管理是 Spring 框架中的一个重要组成部分，它主要用于处理数据库事务。Spring 事务管理的主要目标是在复杂的应用程序中提供一个简单、声明式的事务管理机制。
+
+Spring 事务管理的主要原理是通过 AOP（面向切面编程）来实现的。在 Spring 中，事务管理器 TransactionManager 是事务管理的核心，它负责事务的开始、提交、回滚等操作。在声明式事务管理中，Spring 会在运行时动态的生成一个代理对象，这个代理对象会在调用方法前后进行事务的开始和结束。
+
+Spring 事务管理还提供了一些高级特性，如事务的传播行为、事务的隔离级别、事务的只读设置等，这些特性可以用来处理更复杂的事务场景。
+
+### Spring 事务管理有几种方式
 
 Spring 事务管理有两种方式：编程式事务管理和声明式事务管理。
 
 1. 编程式事务管理：这种方式需要在代码中明确的开始和结束事务，这种方式的优点是可以在运行时根据需要决定何时开始事务，何时结束事务，何时提交事务，何时回滚事务。但是，这种方式的缺点是代码的侵入性较强，会使业务代码和事务管理代码混杂在一起。
 2. 声明式事务管理：这种方式主要是通过配置文件或者注解的方式来管理事务，这种方式的优点是非常简单，不需要在代码中进行事务的开始和结束，可以将事务管理和业务代码分离，降低了代码的耦合性。但是，这种方式的缺点是不能在运行时动态的决定何时开始事务，何时结束事务。
 
-Spring 事务管理的主要原理是通过 AOP（面向切面编程）来实现的。在 Spring 中，事务管理器 TransactionManager 是事务管理的核心，它负责事务的开始、提交、回滚等操作。在声明式事务管理中，Spring 会在运行时动态的生成一个代理对象，这个代理对象会在调用方法前后进行事务的开始和结束。
+### Spring 事务中, 有哪几种事务传播行为?
 
-Spring 事务管理还提供了一些高级特性，如事务的传播行为、事务的隔离级别、事务的只读设置等，这些特性可以用来处理更复杂的事务场景。
+Spring 事务管理中，定义了七种事务传播行为，它们分别是：
+
+1. PROPAGATION_REQUIRED：如果当前存在事务，则加入该事务；如果当前没有事务，则创建一个新的事务。这是最常见的选择。
+2. PROPAGATION_SUPPORTS：如果当前存在事务，则加入该事务；如果当前没有事务，则以非事务的方式继续运行。
+3. PROPAGATION_MANDATORY：如果当前存在事务，则加入该事务；如果当前没有事务，则抛出异常。
+4. PROPAGATION_REQUIRES_NEW：创建一个新的事务，如果当前存在事务，则把当前事务挂起。
+5. PROPAGATION_NOT_SUPPORTED：以非事务方式运行，如果当前存在事务，则把当前事务挂起。
+6. PROPAGATION_NEVER：以非事务方式运行，如果当前存在事务，则抛出异常。
+7. PROPAGATION_NESTED：如果当前存在事务，则创建一个事务作为当前事务的嵌套事务来运行；如果当前没有事务，则该选项行为与 PROPAGATION_REQUIRED 类似。
+
+这些事务传播行为定义了事务的边界，以及事务如何在方法调用链中传播。选择合适的事务传播行为，可以帮助我们更好地控制事务的范围和复杂性，从而提高应用程序的性能和可靠性。
+
+### Spring 事务中, 有哪几种隔离级别?
+
+Spring 事务中的隔离级别主要有以下四种：
+
+1. READ_UNCOMMITTED（读未提交）：这是事务隔离级别最低的一种，它允许一个事务可以看到其他事务未提交的数据。这种隔离级别可能会导致脏读、不可重复读和幻读。
+2. READ_COMMITTED（读已提交）：这是大多数数据库系统的默认隔离级别。它满足了隔离的基本要求，一个事务只能看到其他事务已经提交的数据。这种隔离级别可以防止脏读，但是可能会导致不可重复读和幻读。
+3. REPEATABLE_READ（可重复读）：这种隔离级别在 READ_COMMITTED 的基础上，增加了“可重复读”，也就是在同一个事务内，多次读取同样的数据结果是一样的。这种隔离级别可以防止脏读和不可重复读，但是可能会导致幻读。
+4. SERIALIZABLE（串行化）：这是最高的事务隔离级别，它要求所有的事务序列化执行，也就是说在同一时刻只能有一个事务在执行。虽然这种隔离级别可以防止脏读、不可重复读以及幻读，但是由于只能串行化执行，所以效率低下。
+
+以上四种隔离级别，隔离级别越高，数据的一致性越好，但是并发性能越差。因此，在实际的开发中，需要根据业务需求来选择合适的隔离级别。
+
+## Spring Security
+
