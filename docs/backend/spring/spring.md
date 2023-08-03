@@ -2,7 +2,7 @@
 
 ## 概念与常识
 
-### 什么是 Spring Framework?
+### 什么是 Spring Framework? 它有哪些主要特性?
 
 Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编程和配置模型，用于现代化的 Java 企业应用程序。Spring Framework 的核心特性可以用于任何 Java 应用程序，但对于构建企业级应用程序还有扩展，提供了大量的选择。
 
@@ -17,7 +17,7 @@ Spring Framework 的主要特性包括：
 
 Spring Framework 的目标是使得 Java 开发者可以更加专注于业务逻辑的开发，而不是底层的技术实现。
 
-### Spring Framework 包含哪些模块？
+### Spring Framework 包含哪些主要模块？
 
 Spring 4.x 主要模块
 
@@ -56,7 +56,7 @@ Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编
 9. Spring Framework 5.2（2019 年）：这个版本引入了对 R2DBC 的支持，以及对 Java 12 和 Java 13 的支持。
 10. Spring Framework 5.3（2021 年）：这个版本是 Spring Framework 5.x 系列的最后一个特性版本，主要进行了一些优化和改进。
 
-### 什么是 Spring MVC?
+### 什么是 Spring MVC? 它有哪些主要组件?
 
 Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应用程序的模型-视图-控制器 (MVC) 框架。Spring MVC 提供了一种分离式的方法来构建 Web 应用，通过将应用程序逻辑分解为模型、视图和控制器三个部分，使得开发、测试和维护工作变得更加简单和清晰。
 
@@ -71,7 +71,7 @@ Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应�
 
 Spring MVC 提供了丰富的功能，包括数据验证、表单处理、文件上传等，同时也提供了对 RESTful Web 服务的支持。
 
-### 什么是 Spring Boot?
+### 什么是 Spring Boot? 它有哪些主要特点?
 
 Spring Boot 是一个基于 Spring Framework 的开源 Java-based 框架，用于创建独立的、生产级别的 Spring 应用程序。它旨在简化 Spring 应用程序的初始设置和开发过程。Spring Boot 通过自动配置 Spring 和第三方库，使开发人员能够更快速、更有效地开始和运行应用程序。
 
@@ -86,7 +86,7 @@ Spring Boot 的主要特点包括：
 
 总的来说，Spring Boot 的目标是提供一种快速和简便的方式来配置和运行 Spring 应用程序，使开发人员能够更专注于应用程序的开发，而不是配置和依赖管理。
 
-### 什么是 Spring Cloud?
+### 什么是 Spring Cloud? 它有哪些主要功能?
 
 Spring Cloud 是一个基于 Spring Boot 提供的一系列云应用开发工具的集合，它简化了分布式系统的开发、部署和维护。Spring Cloud 提供了在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态）中常见模式的实现。使用 Spring Cloud，开发者可以快速地构建一些常见的分布式系统和微服务架构模式。
 
@@ -102,7 +102,7 @@ Spring Cloud 的主要功能包括：
 
 通过使用 Spring Cloud，开发者可以更加专注于业务逻辑的开发，而不需要关心分布式系统的复杂性。
 
-## 控制反转
+## 依赖注入
 
 ### 说说你对控制反转 (IoC) 设计原则的理解
 
@@ -115,21 +115,6 @@ IoC，全称 Inversion of Control，中文名为“控制反转”，是面向�
 IoC 的实现方式有很多种，如依赖注入 (DI)、依赖查找 (DL)、模板方法设计模式、策略设计模式等。其中，依赖注入是最常用的一种实现方式，它通过在对象创建时，由 IoC 容器将所需的依赖对象注入到目标对象中，从而实现控制反转。
 
 总的来说，IoC 是一种很好的设计原则，它可以帮助我们设计出低耦合、高内聚的系统，提高代码的可读性和可维护性。
-
-### Java 中的 Bean 指的是什么?
-
-在 Java 编程中，Bean 通常指的是遵循特定命名规则的 Java 类，这些规则包括有一个无参数的构造函数，所有属性都是私有的（通过 getter 和 setter 方法进行访问），并且该类应该是可序列化的。Java Beans 主要用于封装多个对象作为一个单一的对象（即 Bean）。
-
-Java Beans 是一种 Java 语言的组件技术，可以被视为一种可重用的软件组件，或者说是一个封装了多个对象的对象。它们主要用于处理数据，但也可以包含业务逻辑。
-
-Java Beans 的主要特点包括：
-
-1. 可重用：一旦创建，Java Beans 可以在多个项目中重复使用，无需进行任何修改。
-2. 可自定义：Java Beans 的属性可以根据需要进行自定义。
-3. 可序列化：Java Beans 可以被转换为字节流，这使得它们可以轻松地在网络上进行传输，或者可以被存储在磁盘上以供以后使用。
-4. 支持事件处理：Java Beans 支持事件监听和处理，这使得它们可以响应用户的交互操作。
-
-在 Java 开发中，Beans 常常被用于如 JavaServer Pages (JSP)、Enterprise JavaBeans (EJB)、Spring Framework 等技术中。
 
 ### 什么是 Spring Bean？
 
@@ -152,7 +137,7 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 3. @Repository：这也是一个特殊类型的@Component 注解，用于标记数据访问对象 (DAO) 层的类。使用@Repository 注解可以为阅读代码的人提供更多上下文信息，说明这个类是数据访问层的组件。
 4. @Controller：这是另一个特殊类型的@Component 注解，用于标记控制器类。使用@Controller 注解可以为阅读代码的人提供更多上下文信息，说明这个类是控制层的组件。
 
-### @Component 和 @Bean 的区别是什么？
+### 说说 @Component 和 @Bean 注解的区别
 
 @Component 和 @Bean 都是 Spring 框架中用于声明 Spring Bean 的注解，但它们的用途和工作方式有所不同。
 
@@ -160,6 +145,30 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 2. @Bean：这个注解通常用于方法级别，表示该方法返回一个 Spring Bean。这个方法需要在一个带有 @Configuration 注解的类中。@Bean 提供了一种延迟实例化 Bean 的方式，即只有当应用程序首次请求该 Bean 时，Spring 才会调用该方法来创建和配置 Bean。
 
 总的来说，@Component 和 @Bean 都可以用于声明 Spring Bean，但它们的使用场景和方式有所不同。@Component 通常用于类级别，而 @Bean 通常用于方法级别。此外，@Component 是一种立即实例化 Bean 的方式，而 @Bean 是一种延迟实例化 Bean 的方式。
+
+### 在 Spring 框架中, 如何实现 Java 配置, 会用到哪些注解?
+
+在 Spring 中，我们可以使用 Java 配置来代替 XML 配置。这种方式可以让我们更好地控制配置过程，并且可以利用 Java 的类型安全性和重构能力。以下是在 Spring 中实现 Java 配置时常用的一些注解：
+
+1. @Configuration：这个注解用于标记一个类作为 Bean 定义的来源，其意义等同于 XML 中的 `<beans>` 标签。
+2. @Bean：这个注解用于标记一个方法，该方法返回的对象应该被注册为一个 Bean 在 ApplicationContext 中。其功能等同于 XML 中的 `<bean>` 标签。
+3. @ComponentScan：这个注解用于自动扫描指定包下的所有类，并注册它们为 Bean。其功能等同于 XML 中的 `<context:component-scan>` 标签。
+4. @PropertySource：这个注解用于加载.properties 文件到 Spring 的 Environment 中。这样我们就可以通过 Environment 或者@Value 注解来读取属性值。
+5. @Import：这个注解用于导入其他的配置类。
+6. @Profile：这个注解用于定义哪些 Bean 应该在特定的 Profile 下注册。
+7. @Autowired：这个注解用于自动装配 Bean。
+8. @Value：这个注解用于注入属性值。
+9. @Scope：这个注解用于指定 Bean 的作用域。
+
+### 在 Spring 框架中，有哪几种自动装配 (Auto-wiring) 方式?
+
+Spring 提供了以下几种自动装配的方式：
+
+1. No：这是默认的装配方式，Spring 不会进行自动装配，开发者需要通过 `<bean>` 元素的 `<property>` 或 `<constructor-arg>` 来手动配置依赖。
+2. ByName：Spring 容器会查看容器中的 Bean，如果存在与需要装配的属性同名的 Bean，就会自动装配。
+3. ByType：Spring 容器会查看容器中的 Bean，如果存在与需要装配的属性类型相同的 Bean，就会自动装配。如果有多个相同类型的 Bean，Spring 会抛出异常。
+4. Constructor：这种方式类似于 ByType，但是适用于通过构造函数来注入依赖的情况。
+5. Autodetect：Spring 首先尝试通过构造函数进行自动装配，如果不行，就会尝试通过 ByType 方式进行自动装配。
 
 ### 在 Spring 框架中，注入 Bean 的注解有哪些？
 
@@ -178,7 +187,7 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 3. 支持范围：@Autowired 只能用于 Spring 的 bean，而@Resource 可以用于所有的 Java 对象。
 4. 使用场景：@Autowired 通常用于 Spring 框架中，而@Resource 更多的是用于 Java EE 应用中。
 
-### @Qualifier 注解的作用是什么？
+### 说说 @Qualifier 注解的作用
 
 `@Qualifier` 是 Spring 框架中的一个注解，主要用于解决自动装配时的歧义性问题。当 Spring 容器中存在多个相同类型的 Bean 时，如果我们使用`@Autowired`进行自动装配，Spring 会不知道应该选择哪个 Bean，这时就会抛出异常。`@Qualifier`注解可以帮助我们解决这个问题。
 
@@ -187,6 +196,50 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 此外，`@Qualifier`注解也可以用在方法参数上，表示该方法参数的注入 Bean 的名称。例如，我们可以在一个方法的参数上使用`@Qualifier("dataSource1")`，这样 Spring 就会将名为`dataSource1`的 Bean 注入到这个参数中。
 
 总的来说，`@Qualifier`注解的作用就是帮助我们在 Spring 的自动装配过程中解决歧义性问题，通过指定 Bean 的名称来进行精确的装配。
+
+### 在 Spring 框架中，依赖注入有哪几种实现方式?
+
+1. 基于属性注入
+```java
+@Controller
+public class FooController {
+  @Autowired
+  //@Inject
+  private FooService fooService;
+
+  //简单的使用例子，下同
+  public List<Foo> listFoo() {
+      return fooService.list();
+  }
+}
+```
+2. 基于 setter 方法注入
+```java
+@Controller
+public class FooController {
+  private FooService fooService;
+
+  //使用方式上同，略
+  @Autowired
+  public void setFooService(FooService fooService) {
+      this.fooService = fooService;
+  }
+}
+```
+3. 基于构造器注入
+```java
+@Controller
+public class FooController {
+  private final FooService fooService;
+
+  @Autowired
+  public FooController(FooService fooService) {
+      this.fooService = fooService;
+  }
+
+  //使用方式上同，略
+}
+```
 
 ### 说说 Spring 中 Bean 的作用域
 
@@ -227,6 +280,8 @@ Spring Bean 的生命周期是指从 Spring 容器中创建 Bean 实例，到初
 
 以上就是 Spring Bean 的生命周期。在这个过程中，Spring 提供了很多扩展点，我们可以通过实现特定的接口或者在配置文件中声明 init-method 和 destroy-method 方法，来自定义 Bean 的初始化和销毁过程。
 
+![](https://pic-hey-prod.oss-cn-qingdao.aliyuncs.com/henry-20230803110547895-b5d264565657a5395c2781081a7483e1.jpeg)
+
 ### 说说 BeanFactory 和 FactoryBean 的区别
 
 BeanFactory 和 FactoryBean 是 Spring 框架中的两个重要接口，它们在功能和用途上有着明显的区别。
@@ -236,7 +291,7 @@ BeanFactory 和 FactoryBean 是 Spring 框架中的两个重要接口，它们�
 
 总结一下，BeanFactory 是一个创建和管理 Bean 的容器，而 FactoryBean 则是一个创建复杂 Bean 的工厂类接口。在 Spring 的配置文件中，通过 `<bean>` 标签定义的 Bean 是由 BeanFactory 来管理的，而通过实现 FactoryBean 接口的类定义的 Bean 是由 FactoryBean 来创建和管理的。
 
-### Spring 是如何解决循环依赖的问题？
+### Spring 是如何解决循环依赖问题的？
 
 Spring 框架解决循环依赖的问题主要通过三级缓存来实现。
 
@@ -245,6 +300,34 @@ Spring 框架解决循环依赖的问题主要通过三级缓存来实现。
 3. 三级缓存：Singleton Factories（单例工厂），存放 bean 工厂对象，用于产生早期的 bean 对象。
 
 当 Spring 容器创建 bean 的时候，首先会检查一级缓存中是否存在，如果存在直接返回。如果不存在，再检查二级缓存，如果二级缓存存在，说明当前 bean 正在创建中，存在循环依赖，直接返回二级缓存中的对象。如果二级缓存也不存在，那么 Spring 容器会从三级缓存中获取对应的 bean 工厂对象，然后调用工厂方法创建一个新的 bean 对象，并放入二级缓存中，然后继续进行属性填充和初始化。当 bean 创建完成后，会将 bean 从二级缓存移动到一级缓存，并从三级缓存中移除。
+
+### 在 Spring 项目中, 如何区分开发、测试等不同环境的配置?
+
+在 Spring 项目中，我们可以通过使用 Spring Profiles 来区分开发、测试等不同环境。Spring Profiles 提供了一种隔离应用程序配置的方式，使得可以将那些只适用于特定环境的 bean 定义与那些适用于所有环境的 bean 定义分开。
+
+以下是如何使用 Spring Profiles 的步骤：
+
+1. 定义 Profile：在 Spring 配置文件或类中，我们可以使用@Profile 注解来定义哪些 bean 属于哪个 profile。例如：
+
+```java
+@Configuration
+@Profile("dev")
+public class DevConfig {
+    //...
+}
+```
+
+2. 激活 Profile：我们可以通过两种方式来激活 profile。一种是在 Spring 的配置文件中设置 spring.profiles.active 属性。另一种是在启动应用程序时，作为一个系统属性来设置。例如，如果我们使用的是 Spring Boot，我们可以在 application.properties 文件中设置 spring.profiles.active=dev 来激活 dev profile。
+
+3. 条件创建 Bean：有时，我们可能需要根据当前激活的 profile 来决定是否创建某个 bean。我们可以使用@Profile 注解来实现这一点。例如：
+
+```java
+@Bean
+@Profile("dev")
+public DataSource devDataSource() {
+    //...
+}
+```
 
 ## 面向切面编程
 
@@ -266,6 +349,23 @@ Spring AOP 和 AspectJ AOP 都是面向切面编程的框架，它们都提供�
 2. 功能范围：Spring AOP 的功能相对较少，主要支持方法级别的拦截，而 AspectJ 提供了更全面的切面编程支持，包括构造函数拦截、静态方法拦截、字段拦截等。
 3. 集成：Spring AOP 更容易与 Spring 框架集成，因为它是 Spring 框架的一部分。而 AspectJ 虽然可以与 Spring 框架集成，但需要额外的配置和管理。
 4. 学习曲线：Spring AOP 的学习曲线相对较平缓，因为它的语法和概念都比较简单。而 AspectJ 的学习曲线可能会更陡峭，因为它的语法和概念都比较复杂。
+
+### JDK 动态代理和 CGLIB 动态代理有什么区别？
+
+JDK 动态代理和 CGLIB 动态代理是 Java 中两种常见的动态代理方式，它们的主要区别在于代理的对象和实现的原理。
+
+1. 代理的对象：
+   - JDK 动态代理：只能对实现了接口的类生成代理对象。也就是说，它的代理对象必须是某个接口的实现，它是通过在运行期间创建一个接口的实现类来完成对目标对象的代理。
+   - CGLIB 动态代理：可以对类生成代理对象，不需要实现接口。CGLIB 是通过继承目标类的方式进行代理的，因此不能对 final 修饰的类进行代理。
+2. 实现的原理：
+   - JDK 动态代理：是通过反射机制来生成代理对象的，因此在性能上会有一些损耗。
+   - CGLIB 动态代理：是通过生成目标类的子类来实现代理的，因此在性能上比 JDK 动态代理更优。
+3. 使用场景：
+   - JDK 动态代理：如果目标对象实现了接口，优先考虑使用 JDK 动态代理。
+   - CGLIB 动态代理：在目标对象没有实现接口的情况下，通常会选择 CGLIB 动态代理。
+4. 库的依赖：
+   - JDK 动态代理：是 Java 原生支持的，不需要引入额外的库。
+   - CGLIB 动态代理：需要引入 CGLIB 的库。
 
 ### 在 Spring AOP 中，多个切面的执行顺序如何控制？
 
@@ -387,6 +487,55 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 }
 ```
 
+### 说说 @Controller 和 @RestController 注解的区别
+
+在 Spring MVC 和 Spring Boot 中，@Controller 和@RestController 都是用于定义控制器的注解，但它们之间存在一些关键的区别。
+
+1. @Controller：这是一个常规的 Spring MVC 的注解，它标记了一个类作为 Spring MVC 的控制器。@Controller 注解的类可以处理 HTTP 请求，但它们需要配合视图解析器和模板引擎（如 JSP，Thymeleaf 等）来生成 HTTP 响应。如果你想返回一个视图（例如 JSP 或 Thymeleaf），你应该使用@Controller。
+2. @RestController：这是一个特殊的控制器，用于创建 RESTful web 服务。@RestController 是@Controller 和@ResponseBody 的组合注解。这意味着@RestController 注解的类不仅是一个控制器，而且每个方法都默认添加了@ResponseBody 注解。因此，@RestController 注解的类的每个方法都会直接返回一个数据对象（如 JSON 或 XML），而不是视图。
+
+### 在 Spring MVC 中, 如何做接口参数的校验?
+
+在 Spring MVC 中，我们可以使用 Java 的标准校验框架 JSR-303(Java Specification Requests) 以及其实现 Hibernate Validator 来进行接口参数的校验。
+
+以下是一些基本步骤：
+
+1. 添加依赖：首先，我们需要在项目中添加 Hibernate Validator 的依赖。
+2. 使用注解：在我们的模型类中，我们可以使用一些注解（如@NotNull, @Size, @Min, @Max 等）来对我们的字段进行校验。
+3. 开启校验：在我们的控制器中，我们需要在需要校验的参数前添加@Valid 或@Validated 注解来开启校验。
+4. 错误处理：当校验失败时，Spring MVC 会抛出一个 MethodArgumentNotValidException 异常。我们可以通过定义全局异常处理器来捕获这个异常，并返回相应的错误信息。
+
+以下是一个简单的例子：
+
+```java
+public class User {
+    @NotNull(message = "用户名不能为空")
+    private String username;
+
+    @Size(min = 6, max = 18, message = "密码长度必须在 6 到 18 之间")
+    private String password;
+    // getters and setters
+}
+
+@RestController
+public class UserController {
+    @PostMapping("/users")
+    public String createUser(@Valid @RequestBody User user) {
+        // ...
+    }
+}
+```
+
+### 在参数校验中, @Valid 和 @Validated 注解的区别?
+
+`@Valid`和`@Validated`都是用于数据校验的注解，它们在功能上有一些相似之处，但也有一些关键的区别。
+
+1. 来源：`@Valid`是来自于 JSR 303 规范，是 Java 标准的校验注解，而`@Validated`是 Spring 的注解。
+2. 分组校验：`@Valid`不支持分组校验，而`@Validated`支持分组校验。所谓分组校验，就是我们可以在校验时，指定只校验某一部分的约束，而不是全部约束。
+3. 应用范围：`@Valid`可以用在方法参数，成员属性，局部变量等地方，而`@Validated`只能用在类型上（类或接口）。
+4. 嵌套校验：`@Valid`可以进行嵌套验证，例如验证对象中的对象。`@Validated`则不支持嵌套验证。
+5. 错误处理：`@Valid`的错误处理需要配合`BindingResult`或`Errors`接口使用，而`@Validated`的错误处理则需要配合`MethodArgumentNotValidException`异常处理。
+
 ## Spring 事务
 
 Spring 事务管理是 Spring 框架中的一个重要组成部分，它主要用于处理数据库事务。Spring 事务管理的主要目标是在复杂的应用程序中提供一个简单、声明式的事务管理机制。
@@ -406,7 +555,7 @@ ACID 是用来描述数据库事务的四个关键特性的首字母缩写。
 
 这四个特性是数据库事务管理的基础，它们确保了数据库事务的完整性和可靠性。
 
-### Spring 事务管理有几种方式
+### Spring 事务管理有哪几种方式
 
 Spring 事务管理有两种方式：编程式事务管理和声明式事务管理。
 
@@ -437,3 +586,164 @@ Spring 事务中的隔离级别主要有以下四种：
 4. SERIALIZABLE（串行化）：这是最高的事务隔离级别，它要求所有的事务序列化执行，也就是说在同一时刻只能有一个事务在执行。虽然这种隔离级别可以防止脏读、不可重复读以及幻读，但是由于只能串行化执行，所以效率低下。
 
 以上四种隔离级别，隔离级别越高，数据的一致性越好，但是并发性能越差。因此，在实际的开发中，需要根据业务需求来选择合适的隔离级别。
+
+## Spring 高级话题
+
+### 说说 Spring 中的事件机制, 如何发送事件, 如何监听事件?
+
+Spring 框架的事件机制是基于观察者设计模式的，它允许我们在 Spring 应用中定义、监听和发布自定义事件。Spring 的事件机制主要由三个主要组件组成：ApplicationEvent、ApplicationListener 和 ApplicationEventPublisher。
+
+1. ApplicationEvent：这是所有应用程序事件的超类。我们可以通过扩展此类来创建自定义事件。
+2. ApplicationListener：这是所有事件监听器的接口。我们可以通过实现此接口并定义 onApplicationEvent 方法来创建事件监听器。当有事件发布时，Spring 会通知所有注册的监听器。
+3. ApplicationEventPublisher：这是所有事件发布者的接口。我们可以通过实现此接口并定义 publishEvent 方法来创建事件发布者。当我们想要发布事件时，我们可以使用这个接口。
+
+如何发送事件：
+
+要发布事件，我们需要一个 ApplicationEventPublisher 的实例。在 Spring 中，ApplicationContext 实现了 ApplicationEventPublisher 接口，因此我们可以直接使用 ApplicationContext 来发布事件。以下是一个简单的示例：
+
+```java
+ApplicationContext context = ...
+context.publishEvent(new CustomEvent(this, "Custom event message"));
+```
+
+如何监听事件：
+
+要监听事件，我们需要创建一个实现了 ApplicationListener 接口的类，并定义 onApplicationEvent 方法。当有事件发布时，Spring 会自动调用这个方法。以下是一个简单的示例：
+
+```java
+public class CustomEventListener implements ApplicationListener<CustomEvent> {
+    @Override
+    public void onApplicationEvent(CustomEvent event) {
+        System.out.println("Received custom event - " + event.getMessage());
+    }
+}
+```
+
+然后，我们需要将这个监听器注册到 Spring 应用上下文中，这可以通过在 Spring 配置文件中定义一个 bean，或者在类上使用@Component 注解来实现。
+
+### 在 Spring 中, 有哪些默认事件?
+
+Spring 框架中有一些预定义的事件，这些事件在 Spring 应用程序的生命周期中的特定点被触发。以下是一些常见的默认事件：
+
+1. ContextRefreshedEvent：当 ApplicationContext 被初始化或刷新时，该事件被发布。这也可以在 ConfigurableApplicationContext 接口中的 refresh() 方法被调用时发生。
+2. ContextStartedEvent：当 ApplicationContext 启动时，该事件被发布。这可以在调用 ConfigurableApplicationContext 的 Start() 方法时发生。
+3. ContextStoppedEvent：当 ApplicationContext 停止时，该事件被发布。这可以在调用 ConfigurableApplicationContext 的 stop() 方法时发生。
+4. ContextClosedEvent：当 ApplicationContext 被关闭时，该事件被发布。一个已关闭的上下文到达生命周期的末端；它不能被刷新或重新启动。
+5. RequestHandledEvent：当 HTTP 请求被服务时，该事件被发布。这只在使用 Spring 的 DispatcherServlet 时适用。
+6. ServletRequestHandledEvent：当一个 HTTP 请求完成处理时，该事件被发布。
+
+以上就是 Spring 中的一些默认事件。这些事件提供了一种方式，使得开发者可以在 Spring 应用程序的生命周期的特定点进行干预。
+
+### 说说你对 Spring Aware 的理解, 并举一个应用场景
+
+Spring Aware 接口是 Spring 框架中的一个重要组成部分，它允许 Spring Bean 获取到 Spring 容器的相关信息和资源。Spring Aware 接口主要用于那些需要感知或者说需要与 Spring 容器进行交互的 Bean。
+
+Spring Aware 接口有很多种，例如 ApplicationContextAware, BeanNameAware, BeanFactoryAware 等。当一个 Bean 实现了这些接口之一，Spring 容器在创建这个 Bean 的时候，会自动调用相应的方法，将容器相关的信息或者资源注入到这个 Bean 中。
+
+例如，当一个 Bean 实现了 ApplicationContextAware 接口，Spring 容器在创建这个 Bean 的时候，会调用 setApplicationContext 方法，将 ApplicationContext 注入到这个 Bean 中。这样，这个 Bean 就可以通过 ApplicationContext 来获取其他 Bean，发布事件，获取资源等。
+
+### 在 Spring 中, 如何实现异步多线程并发编程?
+
+在 Spring 框架中，我们可以使用`@Async`注解来实现异步多线程并发编程。以下是一些关键步骤：
+
+1. 首先，我们需要在 Spring 配置文件中启用异步支持。这可以通过在配置类上添加`@EnableAsync`注解来实现。
+
+```java
+@Configuration
+@EnableAsync
+public class SpringAsyncConfig {
+    // ...
+}
+```
+2. 然后，我们需要创建一个`Executor` bean，Spring 将使用它来执行带有`@Async`注解的方法。我们可以使用`ThreadPoolTaskExecutor`，这是 Spring 提供的一个实现。
+
+```java
+@Configuration
+@EnableAsync
+public class SpringAsyncConfig {
+
+    @Bean(name = "taskExecutor")
+    public Executor taskExecutor() {
+        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        executor.setCorePoolSize(5);
+        executor.setMaxPoolSize(10);
+        executor.setQueueCapacity(500);
+        executor.setThreadNamePrefix("GithubLookup-");
+        executor.initialize();
+        return executor;
+    }
+}
+```
+3. 最后，我们可以在需要异步执行的方法上添加`@Async`注解。这将告诉 Spring 在新的线程中执行该方法。
+
+```java
+@Service
+public class AsyncService {
+
+    @Async("taskExecutor")
+    public CompletableFuture<User> findUser(String user) throws InterruptedException {
+        // ...
+    }
+}
+```
+
+在上述代码中，`findUser`方法将在名为`taskExecutor`的`Executor`的一个线程中异步执行。
+
+需要注意的是，`@Async`注解只能在 public 方法上使用，且该方法必须是在另一个 bean 中调用的。如果在同一个类中调用带有`@Async`注解的方法，那么该方法将不会异步执行。
+
+此外，如果希望`@Async`方法有返回值，那么必须返回`Future`或`CompletableFuture`对象。
+
+### 在 Spring 中, 如何实现计划任务定时执行?
+
+在 Spring 框架中，我们可以使用 Spring Task Scheduler 来实现计划任务的定时执行。以下是一些常用的方法：
+
+1. 使用 Spring Task Scheduler：Spring Task Scheduler 是 Spring 框架提供的一个任务调度器，它可以用来执行定时任务。我们可以通过在 Spring 配置文件中定义一个 TaskScheduler bean，然后使用@Scheduled 注解来标记需要定时执行的方法。
+
+```java
+@Configuration
+@EnableScheduling
+public class SpringConfig {
+    @Bean
+    public TaskScheduler taskScheduler() {
+        return new ConcurrentTaskScheduler();
+    }
+}
+
+@Component
+public class MyTask {
+    @Scheduled(fixedRate = 1000)
+    public void doSomething() {
+        // this will be executed every 1000ms
+    }
+}
+```
+2. 使用 Cron 表达式：Spring Task Scheduler 也支持 Cron 表达式，这使得我们可以更灵活地控制任务的执行时间。
+
+```java
+@Component
+public class MyTask {
+    @Scheduled(cron = "0 0 12 * * ?")
+    public void doSomething() {
+        // this will be executed every day at 12pm
+    }
+}
+```
+3. 使用 Spring Boot 的@Scheduled 注解：如果你正在使用 Spring Boot，你可以直接使用@Scheduled 注解来定义定时任务，无需额外配置 TaskScheduler bean。
+
+```java
+@SpringBootApplication
+@EnableScheduling
+public class Application {
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class);
+    }
+}
+
+@Component
+public class MyTask {
+    @Scheduled(fixedRate = 1000)
+    public void doSomething() {
+        // this will be executed every 1000ms
+    }
+}
+```

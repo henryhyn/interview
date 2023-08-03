@@ -1,6 +1,8 @@
 # Spring Boot
 
-## 说说 Spring Boot 的启动流程
+## 概念与常识
+
+### 说说 Spring Boot 的启动流程
 
 Spring Boot 的启动流程可以分为以下几个步骤：
 
@@ -17,7 +19,7 @@ Spring Boot 的启动流程可以分为以下几个步骤：
 
 以上就是 Spring Boot 的启动流程，这个流程涵盖了 Spring Boot 的核心功能，包括自动配置、依赖管理、Bean 管理等等。
 
-## 说说 Spring Boot 的起步依赖
+### 说说 Spring Boot 的起步依赖 (starter)
 
 Spring Boot 的起步依赖是一种特殊的依赖关系，它可以简化构建配置。起步依赖本质上是一个 Maven 项目对象模型 (POM)，它定义了对其他库的传递依赖关系，这些库在进行 Spring Boot 应用程序开发时可能需要。这意味着，只需添加一个起步依赖，就可以自动包含一组相关的依赖项。
 
@@ -41,7 +43,7 @@ Spring Boot 提供了许多不同的起步依赖，包括：
 
 使用起步依赖可以极大地简化构建配置，让你可以专注于应用程序的开发，而不是花费大量时间在管理依赖关系上。
 
-## Spring Boot 实现热部署有哪几种方式？
+### Spring Boot 实现热部署有哪几种方式？
 
 Spring Boot 提供了几种实现热部署 (Hot Deployment) 的方式，主要包括以下几种：
 
@@ -50,7 +52,7 @@ Spring Boot 提供了几种实现热部署 (Hot Deployment) 的方式，主要�
 3. HotSwapAgent：HotSwapAgent 是一个开源的 Java 类重新加载工具。它通过修改 JVM，使得在运行时修改类定义成为可能。HotSwapAgent 不仅支持基本的类重新加载，还支持 Spring、Hibernate 等框架的热部署。
 4. LiveReload：LiveReload 是一个浏览器插件，它可以监听文件的改动，并在文件改动后自动刷新浏览器。如果你的项目是一个 Web 项目，那么 LiveReload 可以帮助你实现前端代码的热部署。
 
-## Spring Boot 中的监视器是什么？它有什么用途?
+### Spring Boot 中的监视器是什么？它有什么用途?
 
 Spring Boot Actuator 是 Spring Boot 中的监视器，它提供了一种监控和管理 Spring Boot 应用程序的方式，无论是生产环境还是开发环境。Actuator 主要提供了两类功能：HTTP 端点和指标。
 
@@ -59,21 +61,21 @@ Spring Boot Actuator 是 Spring Boot 中的监视器，它提供了一种监控�
 
 Spring Boot Actuator 的主要目标是帮助你监控和管理你的应用程序，比如健康检查、审计、统计和 HTTP 追踪等。所有这些特性可以通过 JMX 或 HTTP endpoints 来访问。
 
-## 自动装配
+## 自动配置
 
-### 什么是 SpringBoot 自动装配？
+### 什么是 SpringBoot 自动配置 (Auto-configuration)？
 
-SpringBoot 自动装配是 SpringBoot 框架的一个重要特性，它可以帮助开发者自动地装配应用程序所需要的各种组件和配置，极大地简化了 Spring 应用的初始搭建以及后续的维护工作。
+SpringBoot 自动配置是 SpringBoot 框架的一个重要特性，它可以帮助开发者自动地装配应用程序所需要的各种组件和配置，极大地简化了 Spring 应用的初始搭建以及后续的维护工作。
 
-SpringBoot 自动装配的核心是 @EnableAutoConfiguration 注解，这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动装配。
+SpringBoot 自动配置的核心是 @EnableAutoConfiguration 注解，这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动配置。
 
-例如，如果你在项目中添加了 spring-boot-starter-web 依赖，SpringBoot 就会自动装配与 Web 开发相关的各种组件，如 DispatcherServlet、ResourceHandlers、MessageConverters 等。如果你在项目中添加了 spring-boot-starter-data-jpa 依赖，SpringBoot 就会自动装配与 JPA 数据访问相关的各种组件，如 EntityManagerFactory、DataSource、TransactionManager 等。
+例如，如果你在项目中添加了 spring-boot-starter-web 依赖，SpringBoot 就会自动配置与 Web 开发相关的各种组件，如 DispatcherServlet、ResourceHandlers、MessageConverters 等。如果你在项目中添加了 spring-boot-starter-data-jpa 依赖，SpringBoot 就会自动配置与 JPA 数据访问相关的各种组件，如 EntityManagerFactory、DataSource、TransactionManager 等。
 
-这种自动装配的机制，使得开发者可以更加专注于业务逻辑的开发，而不需要花费大量的时间去手动配置和管理各种组件。
+这种自动配置的机制，使得开发者可以更加专注于业务逻辑的开发，而不需要花费大量的时间去手动配置和管理各种组件。
 
-### SpringBoot 是如何实现自动装配的？如何实现按需加载？
+### SpringBoot 是如何实现自动配置的？如何实现按需加载？
 
-SpringBoot 的自动装配是通过 @EnableAutoConfiguration 注解实现的。这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动装配。
+SpringBoot 的自动配置是通过 @EnableAutoConfiguration 注解实现的。这个注解会启动自动配置，扫描项目的 classpath，查找 META-INF/spring.factories 文件，然后根据文件中配置的类名进行自动配置。
 
 具体来说，SpringBoot 在启动时会加载所有的自动配置类，这些类都是在 spring.factories 文件中声明的。每个自动配置类都会尝试根据 classpath 和其他条件来决定是否应该启用自己的配置。例如，如果 classpath 中存在 H2 数据库的类，并且用户没有配置任何数据库连接信息，那么 H2 数据库的自动配置就会启用。
 

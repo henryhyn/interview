@@ -124,3 +124,34 @@ int i = integer;  // 自动拆箱
 总结一下，方法的重载是在同一个类中的多个方法有相同的名字但参数列表不同，而方法的重写是子类重写父类的方法，方法名、参数列表和返回类型都必须相同。
 
 ## 对象
+
+### Java 中的 Bean 指的是什么?
+
+在 Java 编程中，Bean 通常指的是遵循特定命名规则的 Java 类，这些规则包括有一个无参数的构造函数，所有属性都是私有的（通过 getter 和 setter 方法进行访问），并且该类应该是可序列化的。Java Beans 主要用于封装多个对象作为一个单一的对象（即 Bean）。
+
+Java Beans 是一种 Java 语言的组件技术，可以被视为一种可重用的软件组件，或者说是一个封装了多个对象的对象。它们主要用于处理数据，但也可以包含业务逻辑。
+
+Java Beans 的主要特点包括：
+
+1. 可重用：一旦创建，Java Beans 可以在多个项目中重复使用，无需进行任何修改。
+2. 可自定义：Java Beans 的属性可以根据需要进行自定义。
+3. 可序列化：Java Beans 可以被转换为字节流，这使得它们可以轻松地在网络上进行传输，或者可以被存储在磁盘上以供以后使用。
+4. 支持事件处理：Java Beans 支持事件监听和处理，这使得它们可以响应用户的交互操作。
+
+在 Java 开发中，Beans 常常被用于如 JavaServer Pages (JSP)、Enterprise JavaBeans (EJB)、Spring Framework 等技术中。
+
+### Java Bean 与 Plain Old Java Object 有什么区别?
+
+Java Bean 和 Plain Old Java Object (POJO) 都是 Java 编程中的术语，它们都代表了一种 Java 对象，但是它们之间存在一些关键的区别。
+
+1. 规范：
+   - Java Bean：Java Bean 是一种遵循特定命名约定的 Java 类，它应该有一个无参的构造函数，所有的属性应该有对应的 getter 和 setter 方法，且可以序列化。这些规范使得 Java Bean 可以被各种 Java 框架和库更容易地使用和管理。
+   - POJO：POJO 是 Plain Old Java Object 的缩写，它不需要遵循任何特定的命名约定，也不需要实现任何接口或继承任何类（除了必要的 java.lang.Object）。POJO 的主要目标是简化 Java 对象的开发和使用。
+2. 用途：
+   - Java Bean：Java Bean 通常用于封装数据，它们可以被用作数据传输对象 (DTO)，也可以被用于业务逻辑。Java Bean 还可以被用于 JavaBeans 组件模型，这是一种在可视化设计环境中重用组件的框架。
+   - POJO：POJO 通常用于简化企业应用的开发。例如，Spring 框架就大量使用了 POJO，它允许开发者使用 POJO 来实现业务逻辑，而不需要继承特定的类或实现特定的接口。
+3. 约束：
+   - Java Bean：Java Bean 有更多的约束，例如必须有一个无参的构造函数，必须实现 Serializable 接口等。
+   - POJO：POJO 的约束较少，它只需要是一个普通的 Java 对象，不需要继承或实现任何特定的类或接口。
+
+总的来说，Java Bean 和 POJO 都是 Java 对象，但 Java Bean 遵循更多的规范，而 POJO 更加灵活和简单。在实际的开发中，应根据具体的需求和场景来选择使用 Java Bean 还是 POJO。
