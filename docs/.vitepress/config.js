@@ -95,6 +95,12 @@ function sidebarBackend() {
       { text: 'MySQL', link: '/backend/db/mysql' },
       { text: 'Redis', link: '/backend/db/redis' }
     ]
+  }, {
+    text: '数据结构与算法',
+    items: [
+      { text: '数据结构', link: '/backend/algo/struct' },
+      { text: '查找排序', link: '/backend/algo/sort' }
+    ]
   }]
 }
 
