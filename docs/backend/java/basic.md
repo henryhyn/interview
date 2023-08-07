@@ -4,9 +4,9 @@
 
 ### 能否详细解释一下 JVM、JDK 和 JRE 之间的区别和各自的作用？
 
-1. JVM(Java Virtual Machine)：Java 虚拟机，是 Java 程序运行的环境。JVM 是一个虚拟的计算机，它接收到字节码（.class 文件），然后解释或编译执行。JVM 是平台无关的，这意味着只要有 JVM，Java 程序就可以在任何操作系统上运行。
-2. JRE(Java Runtime Environment)：Java 运行时环境，包含了 JVM 和 Java 类库等运行 Java 程序所必需的组件。JRE 是运行已经开发好的 Java 程序的用户所需要的环境。
-3. JDK(Java Development Kit)：Java 开发工具包，是 Java 开发人员使用的工具集，它包含了 JRE 以及编译器 (javac)、调试器 (jdb) 等开发工具，还有很多用于开发 Java 应用的类库。简单来说，如果你需要运行 Java 程序，那么你需要 JRE；如果你需要开发 Java 程序，那么你需要 JDK。
+1. JVM (Java Virtual Machine)：Java 虚拟机，是 Java 程序运行的环境。JVM 是一个虚拟的计算机，它接收到字节码（.class 文件），然后解释或编译执行。JVM 是平台无关的，这意味着只要有 JVM，Java 程序就可以在任何操作系统上运行。
+2. JRE (Java Runtime Environment)：Java 运行时环境，包含了 JVM 和 Java 类库等运行 Java 程序所必需的组件。JRE 是运行已经开发好的 Java 程序的用户所需要的环境。
+3. JDK (Java Development Kit)：Java 开发工具包，是 Java 开发人员使用的工具集，它包含了 JRE 以及编译器 (javac)、调试器 (jdb) 等开发工具，还有很多用于开发 Java 应用的类库。简单来说，如果你需要运行 Java 程序，那么你需要 JRE；如果你需要开发 Java 程序，那么你需要 JDK。
 
 ### 能否解释一下什么是字节码，以及它在 Java 中的作用和重要性？
 
@@ -107,12 +107,12 @@ int i = integer;  // 自动拆箱
 
 ## 方法
 
-### 静态方法为什么不能调用非静态成员?
+### 静态方法为什么不能调用非静态成员？
 
 1. 生命周期的不同：静态方法和静态变量属于类，它们在类加载的时候就已经存在了，而非静态成员变量和方法是属于对象的，它们只有在创建对象的时候才会存在。因此，静态方法在调用时可能非静态成员还没有被初始化，所以不能调用非静态成员。
 2. 内存分配的不同：静态方法和静态变量是存储在方法区的，而非静态成员变量和方法是存储在堆内存的。静态方法不能直接访问堆内存中的数据，所以不能调用非静态成员。
 
-### Java 中方法的重载和重写的区别?
+### Java 中方法的重载和重写的区别？
 
 在 Java 编程中，方法的重载 (Overloading) 和重写 (Overriding) 是两个重要的概念。它们都是实现多态的方式，但是它们的使用场景和规则有所不同。
 
@@ -125,7 +125,7 @@ int i = integer;  // 自动拆箱
 
 ## 对象
 
-### Java 中的 Bean 指的是什么?
+### Java 中的 Bean 指的是什么？
 
 在 Java 编程中，Bean 通常指的是遵循特定命名规则的 Java 类，这些规则包括有一个无参数的构造函数，所有属性都是私有的（通过 getter 和 setter 方法进行访问），并且该类应该是可序列化的。Java Beans 主要用于封装多个对象作为一个单一的对象（即 Bean）。
 
@@ -140,7 +140,7 @@ Java Beans 的主要特点包括：
 
 在 Java 开发中，Beans 常常被用于如 JavaServer Pages (JSP)、Enterprise JavaBeans (EJB)、Spring Framework 等技术中。
 
-### Java Bean 与 Plain Old Java Object 有什么区别?
+### Java Bean 与 Plain Old Java Object 有什么区别？
 
 Java Bean 和 Plain Old Java Object (POJO) 都是 Java 编程中的术语，它们都代表了一种 Java 对象，但是它们之间存在一些关键的区别。
 

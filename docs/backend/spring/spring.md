@@ -2,7 +2,7 @@
 
 ## 概念与常识
 
-### 什么是 Spring Framework? 它有哪些主要特性?
+### 什么是 Spring Framework? 它有哪些主要特性？
 
 Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编程和配置模型，用于现代化的 Java 企业应用程序。Spring Framework 的核心特性可以用于任何 Java 应用程序，但对于构建企业级应用程序还有扩展，提供了大量的选择。
 
@@ -56,7 +56,7 @@ Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编
 9. Spring Framework 5.2（2019 年）：这个版本引入了对 R2DBC 的支持，以及对 Java 12 和 Java 13 的支持。
 10. Spring Framework 5.3（2021 年）：这个版本是 Spring Framework 5.x 系列的最后一个特性版本，主要进行了一些优化和改进。
 
-### 什么是 Spring MVC? 它有哪些主要组件?
+### 什么是 Spring MVC? 它有哪些主要组件？
 
 Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应用程序的模型-视图-控制器 (MVC) 框架。Spring MVC 提供了一种分离式的方法来构建 Web 应用，通过将应用程序逻辑分解为模型、视图和控制器三个部分，使得开发、测试和维护工作变得更加简单和清晰。
 
@@ -71,7 +71,7 @@ Spring MVC 是 Spring Framework 的一部分，它是一个用于创建 Web 应�
 
 Spring MVC 提供了丰富的功能，包括数据验证、表单处理、文件上传等，同时也提供了对 RESTful Web 服务的支持。
 
-### 什么是 Spring Boot? 它有哪些主要特点?
+### 什么是 Spring Boot? 它有哪些主要特点？
 
 Spring Boot 是一个基于 Spring Framework 的开源 Java-based 框架，用于创建独立的、生产级别的 Spring 应用程序。它旨在简化 Spring 应用程序的初始设置和开发过程。Spring Boot 通过自动配置 Spring 和第三方库，使开发人员能够更快速、更有效地开始和运行应用程序。
 
@@ -86,7 +86,7 @@ Spring Boot 的主要特点包括：
 
 总的来说，Spring Boot 的目标是提供一种快速和简便的方式来配置和运行 Spring 应用程序，使开发人员能够更专注于应用程序的开发，而不是配置和依赖管理。
 
-### 什么是 Spring Cloud? 它有哪些主要功能?
+### 什么是 Spring Cloud? 它有哪些主要功能？
 
 Spring Cloud 是一个基于 Spring Boot 提供的一系列云应用开发工具的集合，它简化了分布式系统的开发、部署和维护。Spring Cloud 提供了在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态）中常见模式的实现。使用 Spring Cloud，开发者可以快速地构建一些常见的分布式系统和微服务架构模式。
 
@@ -128,7 +128,7 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 
 总的来说，Spring Bean 是 Spring 应用中的重要组成部分，它们由 Spring IoC 容器创建和管理，使得开发者可以更加专注于业务逻辑的开发。
 
-### 在 Spring 框架中，将一个类声明为 Bean 的注解有哪些?
+### 在 Spring 框架中，将一个类声明为 Bean 的注解有哪些？
 
 在 Spring 框架中，有多种方式可以将一个类声明为 Bean，以下是一些常用的注解：
 
@@ -146,21 +146,21 @@ Spring Bean 的生命周期从创建和初始化，到销毁的过程，都是�
 
 总的来说，@Component 和 @Bean 都可以用于声明 Spring Bean，但它们的使用场景和方式有所不同。@Component 通常用于类级别，而 @Bean 通常用于方法级别。此外，@Component 是一种立即实例化 Bean 的方式，而 @Bean 是一种延迟实例化 Bean 的方式。
 
-### 在 Spring 框架中, 如何实现 Java 配置, 会用到哪些注解?
+### 在 Spring 框架中，如何实现 Java 配置，会用到哪些注解？
 
 在 Spring 中，我们可以使用 Java 配置来代替 XML 配置。这种方式可以让我们更好地控制配置过程，并且可以利用 Java 的类型安全性和重构能力。以下是在 Spring 中实现 Java 配置时常用的一些注解：
 
 1. @Configuration：这个注解用于标记一个类作为 Bean 定义的来源，其意义等同于 XML 中的 `<beans>` 标签。
 2. @Bean：这个注解用于标记一个方法，该方法返回的对象应该被注册为一个 Bean 在 ApplicationContext 中。其功能等同于 XML 中的 `<bean>` 标签。
 3. @ComponentScan：这个注解用于自动扫描指定包下的所有类，并注册它们为 Bean。其功能等同于 XML 中的 `<context:component-scan>` 标签。
-4. @PropertySource：这个注解用于加载.properties 文件到 Spring 的 Environment 中。这样我们就可以通过 Environment 或者@Value 注解来读取属性值。
+4. @PropertySource：这个注解用于加载 `.properties` 文件到 Spring 的 Environment 中。这样我们就可以通过 Environment 或者@Value 注解来读取属性值。
 5. @Import：这个注解用于导入其他的配置类。
 6. @Profile：这个注解用于定义哪些 Bean 应该在特定的 Profile 下注册。
 7. @Autowired：这个注解用于自动装配 Bean。
 8. @Value：这个注解用于注入属性值。
 9. @Scope：这个注解用于指定 Bean 的作用域。
 
-### 在 Spring 框架中，有哪几种自动装配 (Auto-wiring) 方式?
+### 在 Spring 框架中，有哪几种自动装配 (Auto-wiring) 方式？
 
 Spring 提供了以下几种自动装配的方式：
 
@@ -197,7 +197,7 @@ Spring 提供了以下几种自动装配的方式：
 
 总的来说，`@Qualifier`注解的作用就是帮助我们在 Spring 的自动装配过程中解决歧义性问题，通过指定 Bean 的名称来进行精确的装配。
 
-### 在 Spring 框架中，依赖注入有哪几种实现方式?
+### 在 Spring 框架中，依赖注入有哪几种实现方式？
 
 1. 基于属性注入
 ```java
@@ -301,7 +301,7 @@ Spring 框架解决循环依赖的问题主要通过三级缓存来实现。
 
 当 Spring 容器创建 bean 的时候，首先会检查一级缓存中是否存在，如果存在直接返回。如果不存在，再检查二级缓存，如果二级缓存存在，说明当前 bean 正在创建中，存在循环依赖，直接返回二级缓存中的对象。如果二级缓存也不存在，那么 Spring 容器会从三级缓存中获取对应的 bean 工厂对象，然后调用工厂方法创建一个新的 bean 对象，并放入二级缓存中，然后继续进行属性填充和初始化。当 bean 创建完成后，会将 bean 从二级缓存移动到一级缓存，并从三级缓存中移除。
 
-### 在 Spring 项目中, 如何区分开发、测试等不同环境的配置?
+### 在 Spring 项目中，如何区分开发、测试等不同环境的配置？
 
 在 Spring 项目中，我们可以通过使用 Spring Profiles 来区分开发、测试等不同环境。Spring Profiles 提供了一种隔离应用程序配置的方式，使得可以将那些只适用于特定环境的 bean 定义与那些适用于所有环境的 bean 定义分开。
 
@@ -494,7 +494,7 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 1. @Controller：这是一个常规的 Spring MVC 的注解，它标记了一个类作为 Spring MVC 的控制器。@Controller 注解的类可以处理 HTTP 请求，但它们需要配合视图解析器和模板引擎（如 JSP，Thymeleaf 等）来生成 HTTP 响应。如果你想返回一个视图（例如 JSP 或 Thymeleaf），你应该使用@Controller。
 2. @RestController：这是一个特殊的控制器，用于创建 RESTful web 服务。@RestController 是@Controller 和@ResponseBody 的组合注解。这意味着@RestController 注解的类不仅是一个控制器，而且每个方法都默认添加了@ResponseBody 注解。因此，@RestController 注解的类的每个方法都会直接返回一个数据对象（如 JSON 或 XML），而不是视图。
 
-### 在 Spring MVC 中, 如何做接口参数的校验?
+### 在 Spring MVC 中，如何做接口参数的校验？
 
 在 Spring MVC 中，我们可以使用 Java 的标准校验框架 JSR-303(Java Specification Requests) 以及其实现 Hibernate Validator 来进行接口参数的校验。
 
@@ -526,7 +526,7 @@ public class UserController {
 }
 ```
 
-### 在参数校验中, @Valid 和 @Validated 注解的区别?
+### 在参数校验中，@Valid 和 @Validated 注解的区别？
 
 `@Valid`和`@Validated`都是用于数据校验的注解，它们在功能上有一些相似之处，但也有一些关键的区别。
 
@@ -562,7 +562,7 @@ Spring 事务管理有两种方式：编程式事务管理和声明式事务管�
 1. 编程式事务管理：这种方式需要在代码中明确的开始和结束事务，这种方式的优点是可以在运行时根据需要决定何时开始事务，何时结束事务，何时提交事务，何时回滚事务。但是，这种方式的缺点是代码的侵入性较强，会使业务代码和事务管理代码混杂在一起。
 2. 声明式事务管理：这种方式主要是通过配置文件或者注解的方式来管理事务，这种方式的优点是非常简单，不需要在代码中进行事务的开始和结束，可以将事务管理和业务代码分离，降低了代码的耦合性。但是，这种方式的缺点是不能在运行时动态的决定何时开始事务，何时结束事务。
 
-### Spring 事务中, 有哪几种传播行为?
+### Spring 事务中，有哪几种传播行为？
 
 Spring 事务管理中，定义了七种事务传播行为，它们分别是：
 
@@ -576,7 +576,7 @@ Spring 事务管理中，定义了七种事务传播行为，它们分别是：
 
 这些事务传播行为定义了事务的边界，以及事务如何在方法调用链中传播。选择合适的事务传播行为，可以帮助我们更好地控制事务的范围和复杂性，从而提高应用程序的性能和可靠性。
 
-### Spring 事务中, 有哪几种隔离级别?
+### Spring 事务中，有哪几种隔离级别？
 
 Spring 事务中的隔离级别主要有以下四种：
 
@@ -589,7 +589,7 @@ Spring 事务中的隔离级别主要有以下四种：
 
 ## Spring 高级话题
 
-### 说说 Spring 中的事件机制, 如何发送事件, 如何监听事件?
+### 说说 Spring 中的事件机制，如何发送事件，如何监听事件？
 
 Spring 框架的事件机制是基于观察者设计模式的，它允许我们在 Spring 应用中定义、监听和发布自定义事件。Spring 的事件机制主要由三个主要组件组成：ApplicationEvent、ApplicationListener 和 ApplicationEventPublisher。
 
@@ -621,7 +621,7 @@ public class CustomEventListener implements ApplicationListener<CustomEvent> {
 
 然后，我们需要将这个监听器注册到 Spring 应用上下文中，这可以通过在 Spring 配置文件中定义一个 bean，或者在类上使用@Component 注解来实现。
 
-### 在 Spring 中, 有哪些默认事件?
+### 在 Spring 中，有哪些默认事件？
 
 Spring 框架中有一些预定义的事件，这些事件在 Spring 应用程序的生命周期中的特定点被触发。以下是一些常见的默认事件：
 
@@ -634,7 +634,7 @@ Spring 框架中有一些预定义的事件，这些事件在 Spring 应用程�
 
 以上就是 Spring 中的一些默认事件。这些事件提供了一种方式，使得开发者可以在 Spring 应用程序的生命周期的特定点进行干预。
 
-### 说说你对 Spring Aware 的理解, 并举一个应用场景
+### 说说你对 Spring Aware 的理解，并举一个应用场景
 
 Spring Aware 接口是 Spring 框架中的一个重要组成部分，它允许 Spring Bean 获取到 Spring 容器的相关信息和资源。Spring Aware 接口主要用于那些需要感知或者说需要与 Spring 容器进行交互的 Bean。
 
@@ -642,7 +642,7 @@ Spring Aware 接口有很多种，例如 ApplicationContextAware, BeanNameAware,
 
 例如，当一个 Bean 实现了 ApplicationContextAware 接口，Spring 容器在创建这个 Bean 的时候，会调用 setApplicationContext 方法，将 ApplicationContext 注入到这个 Bean 中。这样，这个 Bean 就可以通过 ApplicationContext 来获取其他 Bean，发布事件，获取资源等。
 
-### 在 Spring 中, 如何实现异步多线程并发编程?
+### 在 Spring 中，如何实现异步多线程并发编程？
 
 在 Spring 框架中，我们可以使用`@Async`注解来实现异步多线程并发编程。以下是一些关键步骤：
 
@@ -693,7 +693,7 @@ public class AsyncService {
 
 此外，如果希望`@Async`方法有返回值，那么必须返回`Future`或`CompletableFuture`对象。
 
-### 在 Spring 中, 如何实现计划任务定时执行?
+### 在 Spring 中，如何实现计划任务定时执行？
 
 在 Spring 框架中，我们可以使用 Spring Task Scheduler 来实现计划任务的定时执行。以下是一些常用的方法：
 

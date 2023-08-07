@@ -52,7 +52,7 @@ Spring Boot 提供了几种实现热部署 (Hot Deployment) 的方式，主要�
 3. HotSwapAgent：HotSwapAgent 是一个开源的 Java 类重新加载工具。它通过修改 JVM，使得在运行时修改类定义成为可能。HotSwapAgent 不仅支持基本的类重新加载，还支持 Spring、Hibernate 等框架的热部署。
 4. LiveReload：LiveReload 是一个浏览器插件，它可以监听文件的改动，并在文件改动后自动刷新浏览器。如果你的项目是一个 Web 项目，那么 LiveReload 可以帮助你实现前端代码的热部署。
 
-### Spring Boot 中的监视器是什么？它有什么用途?
+### Spring Boot 中的监视器是什么？它有什么用途？
 
 Spring Boot Actuator 是 Spring Boot 中的监视器，它提供了一种监控和管理 Spring Boot 应用程序的方式，无论是生产环境还是开发环境。Actuator 主要提供了两类功能：HTTP 端点和指标。
 

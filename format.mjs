@@ -5,11 +5,11 @@ import fs from 'fs';
 // const CJK_ANS = new RegExp(`([${CJK}])([A-Za-z][A-Za-z0-9])`, 'g');
 // const ANS_CJK = new RegExp(`([A-Za-z][A-Za-z0-9])([${CJK}])`, 'g');
 const CRLF_LF = /[ ]*\r?\n/g;
-const CJK_ANS = /(\p{Unified_Ideograph})(\w)/gui;
-const ANS_CJK = /(\w%?)(\p{Unified_Ideograph})/gui;
-const BRACKET = /（([^\p{Unified_Ideograph}]+?)）/gui;
-const CJK_BRACKET = /(\p{Unified_Ideograph})(\()/gui;
-const BRACKET_CJK = /(\))(\p{Unified_Ideograph})/gui;
+const CJK_ANS = /(\p{Unified_Ideograph})(\w)/gu;
+const ANS_CJK = /(\w%?)(\p{Unified_Ideograph})/gu;
+const BRACKET = /（([^\p{Unified_Ideograph}]+?)）/gu;
+const CJK_BRACKET = /(\p{Unified_Ideograph})(\()/gu;
+const BRACKET_CJK = /(\))(\p{Unified_Ideograph})/gu;
 const spacing = function (text) {
   let newText = (text || '').trim();
   newText = newText.replace(CRLF_LF, '\n');
@@ -20,16 +20,22 @@ const spacing = function (text) {
   newText = newText.replace(BRACKET_CJK, '$1 $2');
   return newText + '\n';
 };
+const PUNCT = /(\p{Unified_Ideograph})([,.?:])[ ]*/gu;
+const PUNCT_MAP = {
+  ',': '，',
+  '.': '。',
+  '?': '？',
+  ':': '：'
+};
 const convert = function (symbols) {
-  return symbols
-    .replace(/， */g, ', ')
-    .replace(/； */g, '; ')
-    .replace(/： */g, ': ');
+  return symbols.replace(PUNCT, function (match, p1, p2) {
+    return `${p1}${PUNCT_MAP[p2]}`;
+  });
 };
 
 const args = process.argv.slice(2);
 args.forEach(file => {
   const data = fs.readFileSync(file, 'utf8');
-  fs.writeFileSync(file, spacing(data), { encoding: 'utf8' });
+  fs.writeFileSync(file, convert(spacing(data)), { encoding: 'utf8' });
   console.log(`${file} 转换完毕!`);
 });

@@ -15,7 +15,7 @@ hero:
 
 features:
   - title: 算法题库
-    details: 机器学习, 深度学习
+    details: 机器学习，深度学习
   - title: 后端题库
     details: Java, Spring, 数据库
   - title: 前端题库
