@@ -113,6 +113,9 @@ function sidebarProject() {
     text: '我的项目',
     items: [
       { text: '问数', link: '/project/own/askdata' },
+      { text: '希羽', link: '/project/own/xiyu' },
+      { text: '知源笔记', link: '/project/own/gino' },
+      { text: '面试题库', link: '/project/own/interview' }
     ]
   }]
 }

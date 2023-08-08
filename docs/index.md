@@ -4,14 +4,14 @@ layout: home
 hero:
   name: 面试题库
   text: 厚积薄发
-  tagline: 整理算法、后端、前端面试题库
+  tagline: 整理机器学习、大数据、后端、前端面试题库
   actions:
     - theme: brand
       text: 开始阅读
-      link: /ai/ml/basic
+      link: /backend/java/basic
     - theme: alt
       text: 项目介绍
-      link: /common/example
+      link: /project/own/interview
 
 features:
   - title: 算法题库

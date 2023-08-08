@@ -6,4 +6,4 @@
 
 如果想进一步交流，可加我微信。
 
-![](https://pic-gino-prod.oss-cn-qingdao.aliyuncs.com/henry/20230726210752644-wechatimg863.jpg)
+<img width='100' src='https://pic-gino-prod.oss-cn-qingdao.aliyuncs.com/henry/20230726210752644-wechatimg863.jpg'>
