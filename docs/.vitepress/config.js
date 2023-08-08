@@ -44,7 +44,7 @@ function nav() {
   return [
     { text: '算法', link: '/ai/ml/basic', activeMatch: '/ai/' },
     { text: '后端', link: '/backend/java/basic', activeMatch: '/backend/' },
-    { text: '前端', link: '/frontend/', activeMatch: '/frontend/' },
+    { text: '前端', link: '/frontend/network/basic', activeMatch: '/frontend/' },
     { text: '项目', link: '/project/own/askdata', activeMatch: '/project/' },
     { text: '关于', link: '/common/contact', activeMatch: '/common/' }
   ]
@@ -105,7 +105,12 @@ function sidebarBackend() {
 }
 
 function sidebarFrontend() {
-  return []
+  return [{
+    text: '计算机网络',
+    items: [
+      { text: '基础知识', link: '/frontend/network/basic' }
+    ]
+  }]
 }
 
 function sidebarProject() {
