@@ -60,7 +60,8 @@ function sidebarAi() {
   }, {
     text: '深度学习',
     items: [
-      { text: '注意力机制', link: '/ai/dl/attention' }
+      { text: '注意力机制', link: '/ai/dl/attention' },
+      { text: '推荐系统', link: '/ai/dl/recsys' }
     ]
   }, {
     text: '大语言模型',
