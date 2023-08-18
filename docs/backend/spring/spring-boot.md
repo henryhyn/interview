@@ -14,7 +14,7 @@ Spring Boot 的启动流程可以分为以下几个步骤：
    - 加载所有的自动配置类，这些类会根据应用的依赖和配置自动配置应用的行为。
    - 加载所有的 Bean 定义，这些 Bean 定义会被 ApplicationContext 实例管理。
    - 刷新 ApplicationContext，这个操作会实例化所有的单例 Bean，并调用他们的初始化方法。
-3. 启动内嵌的 Servlet 容器：如果 Spring Boot 应用是一个 Web 应用，那么在 ApplicationContext 刷新完成后，会启动一个内嵌的 Servlet 容器（例如 Tomcat）来处理 HTTP 请求。
+3. 启动内嵌的 Servlet 容器：如果 Spring Boot 应用是一个 Web 应用，那么在 ApplicationContext 刷新完成后，会启动一个内嵌的 Servlet 容器 (例如 Tomcat) 来处理 HTTP 请求。
 4. 运行应用：最后，Spring Boot 应用会开始运行，处理用户的请求。
 
 以上就是 Spring Boot 的启动流程，这个流程涵盖了 Spring Boot 的核心功能，包括自动配置、依赖管理、Bean 管理等等。

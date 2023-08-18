@@ -45,16 +45,16 @@ Spring Framework 是由多个模块组成的，这些模块提供了一系列的
 
 Spring Framework 是一个开源的 Java 平台，它提供了一个全面的编程和配置模型，用于现代的基于 Java 的企业级应用程序。以下是 Spring Framework 的主要版本更新和发展过程：
 
-1. Spring Framework 1.0（2004 年）：这是 Spring Framework 的首个版本，主要提供了依赖注入 (DI) 和面向切面编程 (AOP) 的功能，以及对 JDBC 的抽象支持。
-2. Spring Framework 2.0（2006 年）：这个版本引入了 XML 配置支持，以及对 JPA(Java Persistence API) 的支持。此外，还增加了对 AspectJ 的集成。
-3. Spring Framework 2.5（2007 年）：这个版本引入了注解驱动的编程模型，包括对 @Autowired 和 @Component 注解的支持。
-4. Spring Framework 3.0（2009 年）：这个版本引入了 Java 5+ 的支持，包括对注解的更深入支持，以及对 RESTful web services 的支持。
-5. Spring Framework 3.1（2011 年）：这个版本引入了 Java-based @Configuration 类，以及对 Servlet 3.0 和 Java EE 6 的支持。
-6. Spring Framework 4.0（2013 年）：这个版本引入了对 Java 8 的支持，包括对 lambda 表达式的支持，以及对 WebSocket 和 STOMP messaging 的支持。
-7. Spring Framework 5.0（2017 年）：这个版本引入了对 Reactive Programming 的支持，以及对 Java 9 和 Java EE 8 的支持。
-8. Spring Framework 5.1（2018 年）：这个版本进一步优化了对 Java 11 的支持，并引入了对 RSocket 的支持。
-9. Spring Framework 5.2（2019 年）：这个版本引入了对 R2DBC 的支持，以及对 Java 12 和 Java 13 的支持。
-10. Spring Framework 5.3（2021 年）：这个版本是 Spring Framework 5.x 系列的最后一个特性版本，主要进行了一些优化和改进。
+1. Spring Framework 1.0(2004 年)：这是 Spring Framework 的首个版本，主要提供了依赖注入 (DI) 和面向切面编程 (AOP) 的功能，以及对 JDBC 的抽象支持。
+2. Spring Framework 2.0(2006 年)：这个版本引入了 XML 配置支持，以及对 JPA(Java Persistence API) 的支持。此外，还增加了对 AspectJ 的集成。
+3. Spring Framework 2.5(2007 年)：这个版本引入了注解驱动的编程模型，包括对 @Autowired 和 @Component 注解的支持。
+4. Spring Framework 3.0(2009 年)：这个版本引入了 Java 5+ 的支持，包括对注解的更深入支持，以及对 RESTful web services 的支持。
+5. Spring Framework 3.1(2011 年)：这个版本引入了 Java-based @Configuration 类，以及对 Servlet 3.0 和 Java EE 6 的支持。
+6. Spring Framework 4.0(2013 年)：这个版本引入了对 Java 8 的支持，包括对 lambda 表达式的支持，以及对 WebSocket 和 STOMP messaging 的支持。
+7. Spring Framework 5.0(2017 年)：这个版本引入了对 Reactive Programming 的支持，以及对 Java 9 和 Java EE 8 的支持。
+8. Spring Framework 5.1(2018 年)：这个版本进一步优化了对 Java 11 的支持，并引入了对 RSocket 的支持。
+9. Spring Framework 5.2(2019 年)：这个版本引入了对 R2DBC 的支持，以及对 Java 12 和 Java 13 的支持。
+10. Spring Framework 5.3(2021 年)：这个版本是 Spring Framework 5.x 系列的最后一个特性版本，主要进行了一些优化和改进。
 
 ### 什么是 Spring MVC? 它有哪些主要组件？
 
@@ -88,14 +88,14 @@ Spring Boot 的主要特点包括：
 
 ### 什么是 Spring Cloud? 它有哪些主要功能？
 
-Spring Cloud 是一个基于 Spring Boot 提供的一系列云应用开发工具的集合，它简化了分布式系统的开发、部署和维护。Spring Cloud 提供了在分布式系统（如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态）中常见模式的实现。使用 Spring Cloud，开发者可以快速地构建一些常见的分布式系统和微服务架构模式。
+Spring Cloud 是一个基于 Spring Boot 提供的一系列云应用开发工具的集合，它简化了分布式系统的开发、部署和维护。Spring Cloud 提供了在分布式系统 (如配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态) 中常见模式的实现。使用 Spring Cloud，开发者可以快速地构建一些常见的分布式系统和微服务架构模式。
 
 Spring Cloud 的主要功能包括：
 
 1. 分布式/版本化配置：Spring Cloud 提供了服务器和客户端的支持，用于外部化配置在分布式系统中的管理。
 2. 服务注册和发现：Spring Cloud 提供了对多种服务注册和发现服务的支持，如 Netflix Eureka, Consul, Zookeeper 等。
 3. 路由：Spring Cloud 提供了对请求路由的支持，可以将请求路由到合适的服务实例。
-4. 服务调用：Spring Cloud 提供了对服务调用的支持，可以使用各种方式（如 HTTP, AMQP 等）调用服务。
+4. 服务调用：Spring Cloud 提供了对服务调用的支持，可以使用各种方式 (如 HTTP, AMQP 等) 调用服务。
 5. 负载均衡：Spring Cloud 提供了对负载均衡的支持，可以在客户端进行负载均衡。
 6. 断路器：Spring Cloud 提供了对断路器的支持，可以防止服务的故障影响到其他服务。
 7. 分布式消息：Spring Cloud 提供了对分布式消息的支持，可以使用消息驱动的方式进行服务之间的通信。
@@ -106,7 +106,7 @@ Spring Cloud 的主要功能包括：
 
 ### 说说你对控制反转 (IoC) 设计原则的理解
 
-IoC，全称 Inversion of Control，中文名为“控制反转”，是面向对象编程中的一种设计原则，用于减少代码的耦合度。这种设计原则的核心思想是将对象的创建和对象之间的调用关系交给第三方（例如框架或容器）来控制，而不是由对象自身来控制。这样做的好处是可以降低对象之间的依赖关系，提高系统的可扩展性和可维护性。
+IoC，全称 Inversion of Control，中文名为“控制反转”，是面向对象编程中的一种设计原则，用于减少代码的耦合度。这种设计原则的核心思想是将对象的创建和对象之间的调用关系交给第三方 (例如框架或容器) 来控制，而不是由对象自身来控制。这样做的好处是可以降低对象之间的依赖关系，提高系统的可扩展性和可维护性。
 
 在传统的程序设计中，当一个对象需要调用另一个对象的方法时，通常是由调用者来创建被调用者的实例，然后再调用其方法。这种方式的问题在于，调用者需要知道被调用者的具体实现，这就导致了调用者和被调用者之间的高度耦合。
 
@@ -172,7 +172,7 @@ Spring 提供了以下几种自动装配的方式：
 
 ### 在 Spring 框架中，注入 Bean 的注解有哪些？
 
-在 Spring 框架中，有多种注解可以用于注入（或称为“装配”）Bean，以下是一些常用的注解：
+在 Spring 框架中，有多种注解可以用于注入 (或称为“装配”)Bean，以下是一些常用的注解：
 
 1. @Autowired：这是最常用的注解，用于自动装配 Bean。Spring 会在上下文中查找匹配的 Bean 来注入。如果找到多个匹配的 Bean，Spring 会根据类型来选择正确的 Bean。如果没有找到匹配的 Bean，Spring 会抛出异常。
 2. @Inject：这个注解与@Autowired 功能类似，也是用于自动装配 Bean。不过，@Inject 是来自 Java 的 JSR-330 规范，而@Autowired 是 Spring 的专有注解。
@@ -295,9 +295,9 @@ BeanFactory 和 FactoryBean 是 Spring 框架中的两个重要接口，它们�
 
 Spring 框架解决循环依赖的问题主要通过三级缓存来实现。
 
-1. 一级缓存：Singleton Objects（单例对象），存放完全初始化好的 bean，也就是可以直接使用的。
-2. 二级缓存：Early Singleton Objects（早期的单例对象），存放原始的 bean 对象（尚未填充属性），用于解决循环依赖。
-3. 三级缓存：Singleton Factories（单例工厂），存放 bean 工厂对象，用于产生早期的 bean 对象。
+1. 一级缓存：Singleton Objects(单例对象)，存放完全初始化好的 bean，也就是可以直接使用的。
+2. 二级缓存：Early Singleton Objects(早期的单例对象)，存放原始的 bean 对象 (尚未填充属性)，用于解决循环依赖。
+3. 三级缓存：Singleton Factories(单例工厂)，存放 bean 工厂对象，用于产生早期的 bean 对象。
 
 当 Spring 容器创建 bean 的时候，首先会检查一级缓存中是否存在，如果存在直接返回。如果不存在，再检查二级缓存，如果二级缓存存在，说明当前 bean 正在创建中，存在循环依赖，直接返回二级缓存中的对象。如果二级缓存也不存在，那么 Spring 容器会从三级缓存中获取对应的 bean 工厂对象，然后调用工厂方法创建一个新的 bean 对象，并放入二级缓存中，然后继续进行属性填充和初始化。当 bean 创建完成后，会将 bean 从二级缓存移动到一级缓存，并从三级缓存中移除。
 
@@ -374,7 +374,7 @@ JDK 动态代理和 CGLIB 动态代理是 Java 中两种常见的动态代理方
 1. 使用 @Order 注解：在 Spring AOP 中，可以使用 @Order 注解来指定切面的执行顺序。@Order 注解接受一个整数值作为参数，数值越小，切面的优先级越高，越先执行。例如，@Order(1) 的切面会比 @Order(2) 的切面先执行。
 2. 实现 Ordered 接口：除了使用 @Order 注解，还可以让切面类实现 Spring 的 Ordered 接口。这个接口有一个 getOrder() 方法，返回的整数值用于确定切面的执行顺序。同样，返回值越小，切面的优先级越高。
 
-需要注意的是，如果两个切面的优先级相同（即 @Order 注解的值相同或者 getOrder() 方法返回的值相同），那么这两个切面的执行顺序是不确定的。
+需要注意的是，如果两个切面的优先级相同 (即 @Order 注解的值相同或者 getOrder() 方法返回的值相同)，那么这两个切面的执行顺序是不确定的。
 
 ### AspectJ 定义的通知类型有哪些？
 
@@ -388,7 +388,7 @@ AspectJ 是一个面向切面编程 (AOP) 的框架，它定义了以下几种�
 
 ### Spring AOP 可以对哪些类增强，不能对哪些类增强？
 
-Spring AOP（面向切面编程）是 Spring 框架的一个重要组成部分，它允许开发者定义跨越多个点的行为，例如日志记录、事务管理等。然而，Spring AOP 并不能对所有的类进行增强。
+Spring AOP(面向切面编程) 是 Spring 框架的一个重要组成部分，它允许开发者定义跨越多个点的行为，例如日志记录、事务管理等。然而，Spring AOP 并不能对所有的类进行增强。
 
 可以增强的类：
 
@@ -430,7 +430,7 @@ Spring MVC 是一个基于 Java 的强大的 Web 应用框架，它实现了 Mod
 7. HandlerAdapter 将 controller 执行结果 ModelAndView 返回给 DispatcherServlet。
 8. DispatcherServlet 将 ModelAndView 传给 ViewReslover 视图解析器。
 9. ViewReslover 解析后返回具体 View。
-10. DispatcherServlet 对 View 进行渲染视图（即将模型数据填充至视图中）。
+10. DispatcherServlet 对 View 进行渲染视图 (即将模型数据填充至视图中)。
 11. DispatcherServlet 响应用户。
 
 这个流程涵盖了 Spring MVC 的主要组件，包括 DispatcherServlet，HandlerMapping，Controller，ModelAndView，ViewResolver 等。每个组件都有其特定的角色，共同协作完成请求的处理和响应。
@@ -491,8 +491,8 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 
 在 Spring MVC 和 Spring Boot 中，@Controller 和@RestController 都是用于定义控制器的注解，但它们之间存在一些关键的区别。
 
-1. @Controller：这是一个常规的 Spring MVC 的注解，它标记了一个类作为 Spring MVC 的控制器。@Controller 注解的类可以处理 HTTP 请求，但它们需要配合视图解析器和模板引擎（如 JSP，Thymeleaf 等）来生成 HTTP 响应。如果你想返回一个视图（例如 JSP 或 Thymeleaf），你应该使用@Controller。
-2. @RestController：这是一个特殊的控制器，用于创建 RESTful web 服务。@RestController 是@Controller 和@ResponseBody 的组合注解。这意味着@RestController 注解的类不仅是一个控制器，而且每个方法都默认添加了@ResponseBody 注解。因此，@RestController 注解的类的每个方法都会直接返回一个数据对象（如 JSON 或 XML），而不是视图。
+1. @Controller：这是一个常规的 Spring MVC 的注解，它标记了一个类作为 Spring MVC 的控制器。@Controller 注解的类可以处理 HTTP 请求，但它们需要配合视图解析器和模板引擎 (如 JSP，Thymeleaf 等) 来生成 HTTP 响应。如果你想返回一个视图 (例如 JSP 或 Thymeleaf)，你应该使用@Controller。
+2. @RestController：这是一个特殊的控制器，用于创建 RESTful web 服务。@RestController 是@Controller 和@ResponseBody 的组合注解。这意味着@RestController 注解的类不仅是一个控制器，而且每个方法都默认添加了@ResponseBody 注解。因此，@RestController 注解的类的每个方法都会直接返回一个数据对象 (如 JSON 或 XML)，而不是视图。
 
 ### 在 Spring MVC 中，如何做接口参数的校验？
 
@@ -501,7 +501,7 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 以下是一些基本步骤：
 
 1. 添加依赖：首先，我们需要在项目中添加 Hibernate Validator 的依赖。
-2. 使用注解：在我们的模型类中，我们可以使用一些注解（如@NotNull, @Size, @Min, @Max 等）来对我们的字段进行校验。
+2. 使用注解：在我们的模型类中，我们可以使用一些注解 (如@NotNull, @Size, @Min, @Max 等) 来对我们的字段进行校验。
 3. 开启校验：在我们的控制器中，我们需要在需要校验的参数前添加@Valid 或@Validated 注解来开启校验。
 4. 错误处理：当校验失败时，Spring MVC 会抛出一个 MethodArgumentNotValidException 异常。我们可以通过定义全局异常处理器来捕获这个异常，并返回相应的错误信息。
 
@@ -532,7 +532,7 @@ public class UserController {
 
 1. 来源：`@Valid`是来自于 JSR 303 规范，是 Java 标准的校验注解，而`@Validated`是 Spring 的注解。
 2. 分组校验：`@Valid`不支持分组校验，而`@Validated`支持分组校验。所谓分组校验，就是我们可以在校验时，指定只校验某一部分的约束，而不是全部约束。
-3. 应用范围：`@Valid`可以用在方法参数，成员属性，局部变量等地方，而`@Validated`只能用在类型上（类或接口）。
+3. 应用范围：`@Valid`可以用在方法参数，成员属性，局部变量等地方，而`@Validated`只能用在类型上 (类或接口)。
 4. 嵌套校验：`@Valid`可以进行嵌套验证，例如验证对象中的对象。`@Validated`则不支持嵌套验证。
 5. 错误处理：`@Valid`的错误处理需要配合`BindingResult`或`Errors`接口使用，而`@Validated`的错误处理则需要配合`MethodArgumentNotValidException`异常处理。
 
@@ -540,7 +540,7 @@ public class UserController {
 
 Spring 事务管理是 Spring 框架中的一个重要组成部分，它主要用于处理数据库事务。Spring 事务管理的主要目标是在复杂的应用程序中提供一个简单、声明式的事务管理机制。
 
-Spring 事务管理的主要原理是通过 AOP（面向切面编程）来实现的。在 Spring 中，事务管理器 TransactionManager 是事务管理的核心，它负责事务的开始、提交、回滚等操作。在声明式事务管理中，Spring 会在运行时动态的生成一个代理对象，这个代理对象会在调用方法前后进行事务的开始和结束。
+Spring 事务管理的主要原理是通过 AOP(面向切面编程) 来实现的。在 Spring 中，事务管理器 TransactionManager 是事务管理的核心，它负责事务的开始、提交、回滚等操作。在声明式事务管理中，Spring 会在运行时动态的生成一个代理对象，这个代理对象会在调用方法前后进行事务的开始和结束。
 
 Spring 事务管理还提供了一些高级特性，如事务的传播行为、事务的隔离级别、事务的只读设置等，这些特性可以用来处理更复杂的事务场景。
 
@@ -548,10 +548,10 @@ Spring 事务管理还提供了一些高级特性，如事务的传播行为、�
 
 ACID 是用来描述数据库事务的四个关键特性的首字母缩写。
 
-1. 原子性 (Atomicity)：原子性是指事务是一个不可分割的工作单位，事务中的操作要么全部完成，要么全部不完成。在一个事务中，所有的操作和在一个单一的逻辑工作单元中的更改（包括对数据的访问和更新）都是原子的。也就是说，如果一个事务被其他事务中断，那么它可以被回滚到事务开始时的状态。
+1. 原子性 (Atomicity)：原子性是指事务是一个不可分割的工作单位，事务中的操作要么全部完成，要么全部不完成。在一个事务中，所有的操作和在一个单一的逻辑工作单元中的更改 (包括对数据的访问和更新) 都是原子的。也就是说，如果一个事务被其他事务中断，那么它可以被回滚到事务开始时的状态。
 2. 一致性 (Consistency)：一致性是指事务必须使数据库从一个一致性状态转变为另一个一致性状态。也就是说，一个事务一旦成功结束，那么它对数据库所做的所有的更新将形成数据库的一个一致性状态。如果数据库在事务开始之前是一致的，那么在事务结束之后，无论事务是否成功，数据库必须仍然是一致的。
 3. 隔离性 (Isolation)：隔离性是指在并发环境中，当多个事务同时访问数据库时，一个事务的执行不应该影响其他事务。一个事务查看数据时数据所处的状态，要么是另一并发事务修改它之前的状态，要么是另一事务修改它之后的状态，事务之间互不干扰。
-4. 持久性 (Durability)：持久性是指一旦事务完成（即提交），其对数据库的更改就必须是永久性的。即使在事务完成后系统崩溃，数据库也必须能够恢复到事务成功结束时的状态。
+4. 持久性 (Durability)：持久性是指一旦事务完成 (即提交)，其对数据库的更改就必须是永久性的。即使在事务完成后系统崩溃，数据库也必须能够恢复到事务成功结束时的状态。
 
 这四个特性是数据库事务管理的基础，它们确保了数据库事务的完整性和可靠性。
 
@@ -580,10 +580,10 @@ Spring 事务管理中，定义了七种事务传播行为，它们分别是：
 
 Spring 事务中的隔离级别主要有以下四种：
 
-1. READ_UNCOMMITTED（读未提交）：这是事务隔离级别最低的一种，它允许一个事务可以看到其他事务未提交的数据。这种隔离级别可能会导致脏读、不可重复读和幻读。
-2. READ_COMMITTED（读已提交）：这是大多数数据库系统的默认隔离级别。它满足了隔离的基本要求，一个事务只能看到其他事务已经提交的数据。这种隔离级别可以防止脏读，但是可能会导致不可重复读和幻读。
-3. REPEATABLE_READ（可重复读）：这种隔离级别在 READ_COMMITTED 的基础上，增加了“可重复读”，也就是在同一个事务内，多次读取同样的数据结果是一样的。这种隔离级别可以防止脏读和不可重复读，但是可能会导致幻读。
-4. SERIALIZABLE（串行化）：这是最高的事务隔离级别，它要求所有的事务序列化执行，也就是说在同一时刻只能有一个事务在执行。虽然这种隔离级别可以防止脏读、不可重复读以及幻读，但是由于只能串行化执行，所以效率低下。
+1. READ_UNCOMMITTED(读未提交)：这是事务隔离级别最低的一种，它允许一个事务可以看到其他事务未提交的数据。这种隔离级别可能会导致脏读、不可重复读和幻读。
+2. READ_COMMITTED(读已提交)：这是大多数数据库系统的默认隔离级别。它满足了隔离的基本要求，一个事务只能看到其他事务已经提交的数据。这种隔离级别可以防止脏读，但是可能会导致不可重复读和幻读。
+3. REPEATABLE_READ(可重复读)：这种隔离级别在 READ_COMMITTED 的基础上，增加了“可重复读”，也就是在同一个事务内，多次读取同样的数据结果是一样的。这种隔离级别可以防止脏读和不可重复读，但是可能会导致幻读。
+4. SERIALIZABLE(串行化)：这是最高的事务隔离级别，它要求所有的事务序列化执行，也就是说在同一时刻只能有一个事务在执行。虽然这种隔离级别可以防止脏读、不可重复读以及幻读，但是由于只能串行化执行，所以效率低下。
 
 以上四种隔离级别，隔离级别越高，数据的一致性越好，但是并发性能越差。因此，在实际的开发中，需要根据业务需求来选择合适的隔离级别。
 
