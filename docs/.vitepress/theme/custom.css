@@ -41,3 +41,13 @@ nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li {
 nav[aria-labelledby="doc-outline-aria-label"] > ul > li > ul > li > a:before {
   content: counter(section) "." counter(subsection) " ";
 }
+
+em {
+  font-style: normal;
+  font-weight: bold;
+  color: #10b981;
+}
+
+strong {
+  color: #10b981;
+}

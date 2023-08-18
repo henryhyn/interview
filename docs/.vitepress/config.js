@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import markdownItKatex from 'markdown-it-katex'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,7 +7,17 @@ export default defineConfig({
   title: '面试题库',
   description: '收集算法、后端、前端面试题库',
   lastUpdated: true,
+  head: [
+    ['link', {
+      rel: 'stylesheet',
+      href: 'https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css',
+      crossorigin: ''
+    }]
+  ],
   markdown: {
+    config: (md) => {
+      md.use(markdownItKatex)
+    },
     lineNumbers: true
   },
   themeConfig: {

@@ -7,9 +7,9 @@ import fs from 'fs';
 const CRLF_LF = /[ ]*\r?\n/g;
 const CJK_ANS = /(\p{Unified_Ideograph})(\w)/gu;
 const ANS_CJK = /(\w%?)(\p{Unified_Ideograph})/gu;
-const BRACKET = /（([^\p{Unified_Ideograph}]+?)）/gu;
-const CJK_BRACKET = /(\p{Unified_Ideograph})(\()/gu;
-const BRACKET_CJK = /(\))(\p{Unified_Ideograph})/gu;
+const BRACKET = /（(.+?)）/gu;
+const CJK_BRACKET = /(\p{Unified_Ideograph}\*{0,2})([$(])/gu;
+const BRACKET_CJK = /([$)])(\p{Unified_Ideograph})/gu;
 const spacing = function (text) {
   let newText = (text || '').trim();
   newText = newText.replace(CRLF_LF, '\n');
@@ -25,12 +25,12 @@ const PUNCT_MAP = {
   ',': '，',
   '.': '。',
   '?': '？',
+  '!': '！',
+  ';': '；',
   ':': '：'
 };
 const convert = function (symbols) {
-  return symbols.replace(PUNCT, function (match, p1, p2) {
-    return `${p1}${PUNCT_MAP[p2]}`;
-  });
+  return symbols.replace(PUNCT, (match, p1, p2) => `${p1}${PUNCT_MAP[p2]}`);
 };
 
 const args = process.argv.slice(2);
