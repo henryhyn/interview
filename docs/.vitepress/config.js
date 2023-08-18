@@ -1,8 +1,7 @@
-import { defineConfig } from 'vitepress'
 import markdownItKatex from 'markdown-it-katex'
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default {
   lang: 'zh-CN',
   title: '面试题库',
   description: '收集算法、后端、前端面试题库',
@@ -49,7 +48,7 @@ export default defineConfig({
     outlineTitle: '目录',
     lastUpdatedText: '最后更新时间'
   }
-})
+}
 
 function nav() {
   return [
