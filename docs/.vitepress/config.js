@@ -24,6 +24,7 @@ export default {
     nav: nav(),
 
     sidebar: {
+      '/blog/': sidebarBlog(),
       '/ai/': sidebarAi(),
       '/backend/': sidebarBackend(),
       '/frontend/': sidebarFrontend(),
@@ -52,12 +53,23 @@ export default {
 
 function nav() {
   return [
+    { text: '博客', link: '/blog/java/cas', activeMatch: '/blog/' },
     { text: '算法', link: '/ai/ml/basic', activeMatch: '/ai/' },
     { text: '后端', link: '/backend/java/basic', activeMatch: '/backend/' },
     { text: '前端', link: '/frontend/network/basic', activeMatch: '/frontend/' },
     { text: '项目', link: '/project/own/askdata', activeMatch: '/project/' },
     { text: '关于', link: '/common/contact', activeMatch: '/common/' }
   ]
+}
+
+function sidebarBlog() {
+  return [{
+    text: 'Java',
+    items: [
+      { text: 'Java 内存模型', link: '/blog/java/jmm' },
+      { text: 'CAS 乐观锁', link: '/blog/java/cas' }
+    ]
+  }];
 }
 
 function sidebarAi() {
