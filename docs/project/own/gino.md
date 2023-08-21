@@ -1,6 +1,6 @@
 # 知源笔记
 
-基于 Git + Markdown 的知识管理工具!
+基于 Git + Markdown 的知识管理工具！
 
 ![](https://pic-gino-prod.oss-cn-qingdao.aliyuncs.com/henry/20230222175000039-wechatimg499.png)
 
