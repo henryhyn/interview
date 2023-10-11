@@ -7,5 +7,5 @@
 - 项目地址：<https://inscode.csdn.net/@hynmath/interview>
 - Github 地址：<https://github.com/henryhyn/interview>, 持续更新中，欢迎 Star, Fork 共建！
 - GitCode 地址：<https://gitcode.net/hynmath/interview>
-- 阅读地址：<https://interview.inscode.cc> (备用地址：<http://interview.zhiyuanbiji.cn>)
+- 阅读地址：<http://interview.zhiyuanbiji.cn> (开发环境：<http://interview-dev.zhiyuanbiji.cn>, 通过 JupyterLab Web IDE 进行在线编辑)
 - [关于作者](../../common/contact)
